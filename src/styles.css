@@ -181,7 +181,7 @@ table p {
   overflow-x: hidden;
 }
 
-.container {
+/* .container {
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -189,7 +189,7 @@ table p {
   .container {
     max-width: 1200px;
   }
-}
+} */
 
 .row > * {
   margin-top: 0;
@@ -228,14 +228,14 @@ table p {
 /*-------- Spacing Style Css --------*/
 .container,
 .container-fluid {
-  padding-bottom: 90px;
-  padding-top: 120px;
+  padding-bottom: 42px;
+  padding-top: 42px;
 }
 @media only screen and (max-width: 1199px) {
   .container,
 .container-fluid {
-    padding-bottom: 50px;
-    padding-top: 80px;
+    padding-bottom: 26px;
+    padding-top: 26px;
   }
 }
 
@@ -501,4 +501,419 @@ table p {
 }
 .scroll-to-top.show:hover {
   opacity: 1;
+}
+/*
+-----------------------------------------------------------------------
+  Offcanvas Header
+-----------------------------------------------------------------------
+*/
+.off-canvas-wrapper.offcanvas {
+  background-color: #1f1f1f;
+  width: 310px;
+}
+@media only screen and (max-width: 991px) {
+  .off-canvas-wrapper.offcanvas {
+    width: 310px;
+  }
+}
+.off-canvas-wrapper .offcanvas-header {
+  padding: 0;
+}
+.off-canvas-wrapper .offcanvas-body {
+  padding: 12px 20px 20px;
+  scrollbar-width: auto;
+  scrollbar-color: #1f1f1f #292929;
+  /* Chrome, Edge, and Safari */
+}
+.off-canvas-wrapper .offcanvas-body::-webkit-scrollbar {
+  width: 2px;
+}
+.off-canvas-wrapper .offcanvas-body::-webkit-scrollbar-track {
+  background: #292929;
+}
+.off-canvas-wrapper .offcanvas-body::-webkit-scrollbar-thumb {
+  background-color: #1f1f1f;
+  border-radius: 2px;
+  border: 2px solid #1f1f1f;
+}
+.off-canvas-wrapper .btn-menu-close {
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: #721b65;
+  opacity: 1;
+  border-radius: 0;
+  color: #fff;
+  background-image: none;
+  padding: 0 20px;
+  line-height: 60px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: left;
+  border: none;
+  position: relative;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.off-canvas-wrapper .btn-menu-close i {
+  position: absolute;
+  right: 21px;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+.off-canvas-wrapper .btn-menu-close:hover {
+  color: #fff;
+  background-color: #222;
+}
+
+.offcanvas-backdrop,
+.modal-backdrop {
+  background-color: rgba(43, 43, 43, 0.92);
+  /* cursor: url("../img/icons/cancel-white.webp"), auto; */
+}
+.offcanvas-backdrop.show,
+.modal-backdrop.show {
+  opacity: 1;
+}
+
+.offcanvas-menu-nav {
+  position: relative;
+  z-index: 1;
+}
+
+.offcanvas-menu-nav ul ul {
+  display: none;
+}
+
+.offcanvas-menu-nav li.active > ul {
+  display: block;
+}
+
+.offcanvas-menu-nav li a {
+  color: #fff;
+  display: block;
+  text-transform: capitalize;
+  position: relative;
+  font-size: 17px;
+  font-weight: 400;
+  padding: 15px 0;
+  line-height: 1;
+}
+.offcanvas-menu-nav li a:hover {
+  color: #fff;
+}
+
+.offcanvas-menu-nav li ul {
+  border-left: 1px solid rgba(255, 255, 255, 0.11);
+  padding-left: 18px;
+  margin-bottom: 18px;
+}
+.offcanvas-menu-nav li ul li {
+  padding: 4px 0;
+}
+.offcanvas-menu-nav li ul li a {
+  color: #fff;
+  display: block;
+  text-transform: capitalize;
+  position: relative;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0;
+  line-height: 1.8;
+}
+.offcanvas-menu-nav li ul li a:hover {
+  color: #fff;
+}
+
+.offcanvas-menu-nav .offcanvas-nav-parent ul li .offcanvas-nav-item {
+  font-size: 15px;
+  padding: 4px 0;
+}
+.offcanvas-menu-nav .offcanvas-nav-parent ul li .offcanvas-nav-item:after {
+  top: 4px;
+}
+.offcanvas-menu-nav .offcanvas-nav-parent ul li ul {
+  margin-bottom: 8px;
+}
+
+.offcanvas-menu-nav a:not(:only-child):after {
+  content: "";
+  font-family: "FontAwesome";
+  position: absolute;
+  right: 0;
+  top: 15px;
+}
+
+.offcanvas-menu-nav .active > a:not(:only-child):after {
+  content: "";
+}
+/*
+-----------------------------------------------------------------------
+  Form CSS
+-----------------------------------------------------------------------
+*/
+.contact-form .form-group {
+  margin-bottom: 30px;
+}
+.contact-form .form-control {
+  border: 1px solid #d7d7d7;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 15px;
+  color: #999;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.2px;
+  height: 49px;
+  line-height: 49px;
+  padding: 5px 19px;
+}
+.contact-form .form-control::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #999;
+}
+.contact-form .form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #999;
+}
+.contact-form .form-control:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #999;
+}
+.contact-form .form-control:-moz-placeholder {
+  /* Firefox 18- */
+  color: #999;
+}
+.contact-form textarea.form-control {
+  height: 250px;
+  line-height: 1.3;
+  padding-top: 16px;
+}
+@media only screen and (max-width: 1199px) {
+  .contact-form textarea.form-control {
+    height: 140px;
+  }
+}
+.contact-form [type=submit] {
+  margin-top: 60px;
+  border: none;
+}
+@media only screen and (max-width: 1199px) {
+  .contact-form [type=submit] {
+    margin-top: 35px;
+  }
+}
+
+.form-message .alert-success {
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+.form-message .btn-close {
+  background: transparent;
+  font-size: 19px;
+  line-height: 22px;
+  padding: 0 0 0 1px;
+  margin: 0;
+  background-color: #85bba2;
+  border: 1px solid #79a591;
+  text-align: center;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 2px;
+  margin-right: 11px;
+}
+
+.login-form-content {
+  max-width: 570px;
+  margin: 0 auto;
+}
+.login-form-content .form-group {
+  margin-bottom: 25px;
+}
+.login-form-content .form-group label {
+  color: #333;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.login-form-content .form-group label .required {
+  color: #f00;
+}
+.login-form-content .form-group .form-control {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0;
+  border: 1px solid #e8e8e8;
+  height: 60px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+.login-form-content .form-group .form-control:active, .login-form-content .form-group .form-control:focus {
+  border-color: #721b65;
+}
+.login-form-content .form-group .btn-login {
+  background-color: #721b65;
+  border-color: #721b65;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 0;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 60px;
+  line-height: 64px;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.login-form-content .form-group .btn-login:hover {
+  color: #721b65;
+  background-color: #ffd868;
+  border-color: #ffd868;
+}
+.login-form-content .account-info-group {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media only screen and (max-width: 479.98px) {
+  .login-form-content .account-info-group {
+    display: block;
+  }
+}
+.login-form-content .rememberme-account {
+  float: left;
+}
+@media only screen and (max-width: 479.98px) {
+  .login-form-content .rememberme-account {
+    float: none;
+  }
+}
+.login-form-content .rememberme-account .form-check {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 1;
+  margin-bottom: 0;
+  padding: 0;
+}
+.login-form-content .rememberme-account .form-check .form-check-input {
+  cursor: pointer;
+  width: 15px;
+  margin: 0;
+  height: 15px;
+  border-radius: 0;
+  border: 2px solid #e6e6e6;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  position: relative;
+  top: -2px;
+}
+.login-form-content .rememberme-account .form-check .form-check-input:checked ~ .form-check-label {
+  border-color: #721b65;
+  color: #721b65;
+}
+.login-form-content .rememberme-account .form-check .form-check-input:checked[type=checkbox] {
+  background-color: #721b65;
+}
+.login-form-content .rememberme-account .form-check .form-check-label {
+  color: #8c8c8c;
+  font-size: 14px;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0;
+  position: relative;
+  top: -1px;
+  padding-left: 8px;
+}
+.login-form-content .rememberme-account .form-check .form-check-label:hover {
+  color: #721b65;
+}
+.login-form-content .lost-password {
+  color: #8c8c8c;
+  font-size: 15px;
+  margin-bottom: 0;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+.login-form-content .lost-password:hover {
+  color: #721b65;
+}
+
+.register-form-content {
+  max-width: 570px;
+  margin: 0 auto 10px;
+}
+.register-form-content .form-group {
+  margin-bottom: 25px;
+}
+.register-form-content .form-group label {
+  cursor: pointer;
+  color: #333;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.register-form-content .form-group label .required {
+  color: #f00;
+}
+.register-form-content .form-group .form-control {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0;
+  border: 1px solid #e8e8e8;
+  height: 60px;
+  padding: 0 20px;
+  font-size: 14px;
+}
+.register-form-content .form-group .form-control:active, .register-form-content .form-group .form-control:focus {
+  border-color: #721b65;
+}
+.register-form-content .form-group .btn-register {
+  background-color: #721b65;
+  border-color: #721b65;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 0;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 60px;
+  line-height: 64px;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.register-form-content .form-group .btn-register:hover {
+  color: #721b65;
+  background-color: #ffd868;
+  border-color: #ffd868;
 }

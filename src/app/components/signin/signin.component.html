@@ -1,0 +1,58 @@
+<app-page-header-area mainText="Login"></app-page-header-area>
+<!--== Start My Account Area Wrapper ==-->
+<section class="account-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="login-form-content">
+          <form action="#">
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="username"
+                    >Email Address <span class="required">*</span></label
+                  >
+                  <input id="username" class="form-control" type="email" />
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="password"
+                    >Password <span class="required">*</span></label
+                  >
+                  <input id="password" class="form-control" type="password" />
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <a class="btn-login" href="account.html">Login</a>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group account-info-group mb--0">
+                  <div class="rememberme-account">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="defaultCheck1"
+                      />
+                      <label class="form-check-label" for="defaultCheck1"
+                        >Remember me</label
+                      >
+                    </div>
+                  </div>
+                  <a class="lost-password" routerLink="/register-new-user"
+                    >Don't Have Account?</a
+                  >
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--== End My Account Area Wrapper ==-->

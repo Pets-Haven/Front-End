@@ -1,0 +1,76 @@
+/*
+-----------------------------------------------------------------------
+    Feature CSS
+-----------------------------------------------------------------------
+*/
+.feature-area {
+  border-top: 1px solid #d7d7d7;
+}
+.feature-area .container {
+  padding-bottom: 60px;
+  padding-top: 57px;
+}
+@media only screen and (max-width: 1199px) {
+  .feature-area .container {
+    padding-bottom: 45px;
+    padding-top: 57px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .feature-area .container {
+    padding-bottom: 27px;
+  }
+}
+
+.feature-style2-area {
+  border-top: 0;
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.feature-icon-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media only screen and (max-width: 991px) {
+  .feature-icon-box {
+    margin-bottom: 30px;
+  }
+}
+.feature-icon-box .icon-box {
+  padding-top: 7px;
+}
+@media only screen and (max-width: 1199px) {
+  .feature-icon-box .icon-box {
+    padding-top: 5px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .feature-icon-box .icon-box img {
+    width: 40px;
+  }
+}
+.feature-icon-box .content {
+  padding-left: 20px;
+}
+@media only screen and (max-width: 1199px) {
+  .feature-icon-box .content {
+    padding-left: 10px;
+  }
+}
+.feature-icon-box .content .title {
+  color: #2e2e2e;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 1199px) {
+  .feature-icon-box .content .title {
+    font-size: 20px;
+  }
+}
+.feature-icon-box .content p {
+  color: #848484;
+  line-height: 1;
+}
