@@ -13,4 +13,7 @@ export class UsersService {
   addUser(user: any) {
     return this.http.post(this.baseUrl, user);
   }
+  getUserByEmail(email: string) {
+    return this.http.get(`${this.baseUrl}?email=${email}`);
+  };
 }

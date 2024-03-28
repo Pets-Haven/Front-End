@@ -76,8 +76,6 @@ export class SignupComponent {
   registerAccount(formDetails: any) {
     formDetails.preventDefault();
     if (this.userAccountForm.valid) {
-
-      console.log('Form Submitted!', this.userAccountForm.value);
       this.userServices.addUser(this.userAccountForm.value).subscribe({
         next: data => {
           console.log(data);
