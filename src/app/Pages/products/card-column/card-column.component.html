@@ -1,1 +1,48 @@
-
+<div class="product-item">
+  <div class="product-thumb">
+    <a href="single-product.html">
+      <img
+        src="https://petsegypt.com/web/image/product.template/7163/image_1024?unique=33d7e29s"
+        width="270"
+        height="320"
+        alt="Image-HasTech"
+      />
+    </a>
+  </div>
+  <div class="product-info">
+    <h4 class="title">
+      <a href="single-product.html">{{ product.name }}</a>
+    </h4>
+    <div class="prices">
+      <span class="price">${{ product.price }}</span>
+    </div>
+  </div>
+  <div class="product-action">
+    <button
+      type="button"
+      class="btn-product-wishlist"
+      data-bs-toggle="modal"
+      (click)="addtowhishlist()"
+    >
+      <i class="bi bi-heart heart"></i>
+    </button>
+    <div class="product-action-links">
+      <button
+        type="button"
+        class="btn-product-cart"
+        data-bs-toggle="modal"
+        (click)="addtocart()"
+      >
+        <i class="bi bi-bag"></i>
+      </button>
+      <button
+        type="button"
+        class="btn-product-quick-view"
+        data-bs-toggle="modal"
+        (click)="details()"
+      >
+        <i class="bi bi-eye"></i>
+      </button>
+    </div>
+  </div>
+</div>

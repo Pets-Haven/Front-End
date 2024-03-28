@@ -917,3 +917,6 @@ table p {
   background-color: #ffd868;
   border-color: #ffd868;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

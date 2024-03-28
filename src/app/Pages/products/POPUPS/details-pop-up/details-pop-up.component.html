@@ -1,0 +1,98 @@
+<aside
+  class="product-cart-view-modal modal fade"
+  id="action-QuickViewModal"
+  tabindex="-1"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="product-quick-view-content">
+          <button type="button" class="btn-close" [mat-dialog-close]>
+            <span class="pe-7s-close"><i class="bi bi-x"></i></span>
+          </button>
+          <div class="container pt--0 pb--0">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="product-single-thumb">
+                  <img
+                    src="{{ data.image }}"
+                    width="544"
+                    height="560"
+                    alt="Image-HasTech"
+                  />
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="product-single-info">
+                  <h3 class="main-title">{{ data.name }}</h3>
+                  <div class="prices">
+                    <span class="price">${{ data.price }}</span>
+                  </div>
+                  <div class="rating-box-wrap">
+                    <div class="rating-box">
+                      <i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i>
+                    </div>
+                    <div class="review-status">
+                      <a href="javascript:void(0)">(5 Customer Review)</a>
+                    </div>
+                  </div>
+                  <p>
+                    {{ data.description }}
+                  </p>
+                  <div class="product-single-meta">
+                    <ul>
+                      <li><span>Weight:</span> {{ data.totalWeight }}</li>
+                      <li>
+                        <span>Categories:</span>
+                        <a href="shop.html">{{ data.type }}</a>
+                      </li>
+                      <li>
+                        <span>For:</span>
+                        <a href="shop.html">{{ data.animalType }}</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="product-quick-action">
+                    <div class="qty-wrap">
+                      <div class="pro-qty">
+                        <input
+                          type="text"
+                          [(ngModel)]="quantityNumber"
+                          title="Quantity"
+                          value="01"
+                        />
+                        <div (click)="minusbutton()" class="dec qty-btn">-</div>
+                        <div (click)="addbutton()" class="inc qty-btn">+</div>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      class="btn-product-cart"
+                      data-bs-toggle="modal"
+                      (click)="addtocart()"
+                    >
+                      Add To Cart
+                    </button>
+                    <button
+                      type="button"
+                      class="btn-product-wishlist"
+                      data-bs-toggle="modal"
+                      (click)="addtowhishlist()"
+                    >
+                      <i class="pe-7s-like"><i class="bi bi-heart"></i></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>

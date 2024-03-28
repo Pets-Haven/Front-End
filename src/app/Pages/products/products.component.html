@@ -1,102 +1,146 @@
-
+<app-page-header-area mainText="Our Products"></app-page-header-area>
 <div class="container p-5">
-    <div class="container">
-        <div class="row p-2 d-flex justify-content-between bg-light product-nav">
-            <div class="col-lg-4 col-md-4  col-sm-12">
-                <p style="color: #f8d363; display: inline-block;">{{getCurrentPageProducts().length}} </p>
-                <p style="display: inline-block;">&nbsp; Products Found out of &nbsp;</p>
-                <p style="color: #f8d363; display: inline-block;">{{products.length}} </p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center align-items-center">
-                <a class="text-decoration-none "(click)="toggleCardType(false)" [ngStyle]="{color: !showCardWithoutContent ? '#ffd868' : '#721b65'}">
-                <i class="bi bi-grid-3x3-gap-fill style  m-2">
-
-</i></a>
-<a class="text-decoration-none "(click)="toggleCardType(true)" [ngStyle]="{color: showCardWithoutContent ? '#ffd868' : '#721b65'}">
-                <i class="bi bi-list-task fs-5 "></i></a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-end align-items-center">
-                <div style="margin-right: 1%;">
-                    <p class="mb-0">Sort By:</p>
-                </div>
-                <div class="dropdown ml-3">
-                    <select class="form-control" id="sortSelect" name="sort" (change)="Sortproducts()" [(ngModel)]="sort">
-                        <option value="Default"  selected >Default</option>
-                        <option value="LH">Price L-H</option>
-                        <option value="HL">Price H-L</option>
-                    </select>
-                </div>
-            </div>
-            
+  <div class="container">
+    <div class="row p-2 d-flex justify-content-between bg-light product-nav">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <p style="color: #f8d363; display: inline-block">
+          {{ getCurrentPageProducts().length }}
+        </p>
+        <p style="display: inline-block">&nbsp; Products Found out of &nbsp;</p>
+        <p style="color: #f8d363; display: inline-block">
+          {{ products.length }}
+        </p>
+      </div>
+      <div
+        class="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-center align-items-center"
+      >
+        <a
+          class="text-decoration-none"
+          (click)="toggleCardType(false)"
+          [ngStyle]="{ color: !showCardWithoutContent ? '#ffd868' : '#721b65' }"
+        >
+          <i class="bi bi-grid-3x3-gap-fill style m-2"> </i
+        ></a>
+        <a
+          class="text-decoration-none"
+          (click)="toggleCardType(true)"
+          [ngStyle]="{ color: showCardWithoutContent ? '#ffd868' : '#721b65' }"
+        >
+          <i class="bi bi-list-task fs-5"></i
+        ></a>
+      </div>
+      <div
+        class="col-lg-4 col-md-4 col-sm-12 d-flex justify-content-end align-items-center"
+      >
+        <div style="margin-right: 1%">
+          <p class="mb-0">Sort By:</p>
         </div>
-        <div class="row ">
-           
-            <div class="col-lg-9 col-sm-12">
-                
-                <div class="card bg-dark text-white mt-3">
-                    <img src="https://htmldemo.net/tuime/tuime/assets/img/shop/banner/3.webp" class="card-img" alt="Stony Beach"/>
-                    <div class="card-img-overlay d-flex justify-content-lg-start p-5">
-                      
-                    </div>
-                  </div>
-                
-                
-                <!-- <div *ngIf="!showCardWithoutContent" class="firsview row">
-                    
-
-                    <app-card-column [product]="product" *ngFor="let product of getCurrentPageProducts()"></app-card-column>
-                
-            </div> -->
-            <div *ngIf="showCardWithoutContent" class="second view">
-
-                
-                <app-card-row class="col-lg-4" [product]="product" *ngFor="let product of getCurrentPageProducts()"></app-card-row>
-                
-            </div>
-            
-            <div class="row mt-5">
-                <div class="col-md-12 d-flex justify-content-between">
-                  <button class="btn btn-next-prev mr-2" (click)="onPreviousPage()">Previous</button>
-                  <span>Page {{currentPage}} of {{totalPages()}}</span>
-                  <button class="btn btn-next-prev ml-2" (click)="onNextPage()">Next</button>
-                </div>
-              </div>
-            
-            </div>
-            <div class="col-lg-3 col-sm-12 mt-3">
-                <div class="col-12">
-                    <div class="input-group rounded search-bar">
-                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"  [(ngModel)]="searchValue" name="search" (change)="SearchProducts()"  />
-                        <span class="input-group-text border-0" id="search-addon">
-                            <i class="bi bi-search"></i>
-                        </span>
-                      </div>
-                </div>
-                <div class="col-12 mt-5  ">
-                    <div class="categories list-group mt-3">
-
-                        <a href="#" class="list-group-item list-group-item-action">Accesssories (5)</a>
-                      
-                        <a href="#" class="list-group-item list-group-item-action">Computer (4)</a>
-                      
-                        <a href="#" class="list-group-item list-group-item-action">Covid-19 (2)</a>
-                      
-                        <a href="#" class="list-group-item list-group-item-action">Electronics (6)</a>
-                      
-                        <a href="#" class="list-group-item list-group-item-action">Frame Sunglasses (12)</a>
-                      
-                        <a href="#" class="list-group-item list-group-item-action">Furniture (7)</a>
-                      
-                        <a href="#" class="list-group-item list-group-item-action">Genuine Leather (9)</a>
-                      
-                      </div>
-                      
-                </div>
-                <div class="col-12 mt-5">
-                   
-                      
-                </div>
-            </div>
+        <div class="dropdown ml-3">
+          <select
+            class="form-control"
+            id="sortSelect"
+            name="sort"
+            (change)="Sortproducts()"
+            [(ngModel)]="sort"
+          >
+            <option value="Default" selected>Default</option>
+            <option value="LH">Price L-H</option>
+            <option value="HL">Price H-L</option>
+          </select>
         </div>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-lg-9 col-sm-12">
+        <div class="card bg-dark text-white mt-3">
+          <img
+            src="https://htmldemo.net/tuime/tuime/assets/img/shop/banner/3.webp"
+            class="card-img"
+            alt="Stony Beach"
+          />
+          <div
+            class="card-img-overlay d-flex justify-content-lg-start p-5"
+          ></div>
+        </div>
+
+        <div *ngIf="!showCardWithoutContent" class="firsview row mt-3">
+          <app-card-column
+            class="col-lg-4"
+            [product]="product"
+            *ngFor="let product of getCurrentPageProducts()"
+          ></app-card-column>
+        </div>
+        <div *ngIf="showCardWithoutContent" class="second view">
+          <app-card-row
+            class="col-lg-4"
+            [product]="product"
+            *ngFor="let product of getCurrentPageProducts()"
+          ></app-card-row>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-md-12 d-flex justify-content-between">
+            <button class="btn btn-next-prev mr-2" (click)="onPreviousPage()">
+              Previous
+            </button>
+            <span>Page {{ currentPage }} of {{ totalPages() }}</span>
+            <button class="btn btn-next-prev ml-2" (click)="onNextPage()">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-12 mt-3">
+        <div class="col-12">
+          <div class="input-group rounded search-bar">
+            <input
+              type="search"
+              class="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-addon"
+              [(ngModel)]="searchValue"
+              name="search"
+              (change)="SearchProducts()"
+            />
+            <span class="input-group-text border-0" id="search-addon">
+              <i class="bi bi-search"></i>
+            </span>
+          </div>
+        </div>
+        <div class="col-12 mt-5">
+          <div class="categories list-group mt-3">
+            <a href="#" class="list-group-item list-group-item-action"
+              >Accesssories (5)</a
+            >
+
+            <a href="#" class="list-group-item list-group-item-action"
+              >Computer (4)</a
+            >
+
+            <a href="#" class="list-group-item list-group-item-action"
+              >Covid-19 (2)</a
+            >
+
+            <a href="#" class="list-group-item list-group-item-action"
+              >Electronics (6)</a
+            >
+
+            <a href="#" class="list-group-item list-group-item-action"
+              >Frame Sunglasses (12)</a
+            >
+
+            <a href="#" class="list-group-item list-group-item-action"
+              >Furniture (7)</a
+            >
+
+            <a href="#" class="list-group-item list-group-item-action"
+              >Genuine Leather (9)</a
+            >
+          </div>
+        </div>
+        <div class="col-12 mt-5"></div>
+      </div>
+    </div>
+  </div>
 </div>

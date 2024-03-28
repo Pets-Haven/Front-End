@@ -17,6 +17,11 @@ import { ProductsComponent } from './Pages/products/products.component';
 import { CardRowComponent } from './Pages/products/card-row/card-row.component';
 import { CardColumnComponent } from './Pages/products/card-column/card-column.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WishlistPopUpComponent } from './Pages/products/POPUPS/wishlist-pop-up/wishlist-pop-up.component';
+import { CartPopUpComponent } from './Pages/products/POPUPS/cart-pop-up/cart-pop-up.component';
+import { DetailsPopUpComponent } from './Pages/products/POPUPS/details-pop-up/details-pop-up.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -32,16 +37,20 @@ import { FormsModule } from '@angular/forms';
     ProductsComponent,
     CardRowComponent,
     CardColumnComponent,
-
+    WishlistPopUpComponent,
+    CartPopUpComponent,
+    DetailsPopUpComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

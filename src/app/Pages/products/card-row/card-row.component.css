@@ -1,41 +1,83 @@
-
 .product-image img {
-    height: 250px;
-    object-fit: fill;
-    transition: transform 0.3s ease;
+  height: 250px;
+  object-fit: fill;
+  transition: transform 0.3s ease;
 }
 
-
 .product-image:hover img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .image-overlay {
-    background-color: rgba(253, 253, 253, 0.15);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  background-color: rgba(253, 253, 253, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .product-image:hover .image-overlay {
-    opacity: 1;
+  opacity: 1;
 }
 
 .btn-cart {
-    background-color: #ffd868 ;
-    color: #721b65;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 15px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #ffd868;
+  color: #721b65;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .btn-cart:hover {
-    background-color: #ff7f00;
+  background-color: #ff7f00;
 }
 
 i {
-    font-size: 20px;
+  font-size: 20px;
 }
 
+.product-action button {
+  background-color: #fff;
+  color: #000;
+  font-size: 24px;
+  height: 44px;
+  width: 44px;
+  display: block;
+  border: none;
+  border-radius: 50%;
+  line-height: 50px;
+  margin-bottom: 10px;
+  transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+}
+.product-action button:hover {
+  -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.08);
+  color: #721b65;
+}
+
+.product-action button {
+  font-size: 22px;
+  line-height: 47px;
+}
+.product-action button + button {
+  transform: translate(-10px, 0px);
+  -webkit-transform: translate(-10px, 0px);
+  -moz-transform: translate(-10px, 0px);
+  -ms-transform: translate(-10px, 0px);
+  -o-transform: translate(-10px, 0px);
+}
+
+.product-action button + button {
+  transform: translate(0px, 0px);
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}

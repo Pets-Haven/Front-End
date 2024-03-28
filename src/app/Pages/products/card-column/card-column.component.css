@@ -1,0 +1,141 @@
+.product-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+.product-item .product-thumb {
+  overflow: hidden;
+  position: relative;
+}
+.product-item .product-thumb img {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  width: 100%;
+}
+.product-item .product-info {
+  margin-top: 23px;
+  text-align: center;
+}
+.product-item .product-info .title {
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 7px;
+}
+.product-item .product-info .title a {
+  color: #000;
+}
+.product-item .product-info .title a:hover {
+  color: #721b65;
+}
+.product-item .product-info .prices {
+  color: #000;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+.product-item .product-action {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+.product-item .product-action button {
+  background-color: #fff;
+  color: #000;
+  font-size: 24px;
+  height: 44px;
+  width: 44px;
+  display: block;
+  border: none;
+  border-radius: 50%;
+  line-height: 50px;
+  margin-bottom: 10px;
+  transition: all 0.4s ease-out;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+}
+.product-item .product-action button:hover {
+  -webkit-box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.08);
+  color: #721b65;
+}
+.product-item .product-action .product-action-links {
+  position: absolute;
+  opacity: 0;
+  top: 100%;
+  right: 20px;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.product-item .product-action .product-action-links button {
+  font-size: 22px;
+  line-height: 47px;
+}
+.product-item .product-action .product-action-links button + button {
+  transform: translate(-10px, 0px);
+  -webkit-transform: translate(-10px, 0px);
+  -moz-transform: translate(-10px, 0px);
+  -ms-transform: translate(-10px, 0px);
+  -o-transform: translate(-10px, 0px);
+}
+.product-item:hover .product-thumb img {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+.product-item:hover .product-action .product-action-links {
+  opacity: 1;
+  right: 0;
+}
+.product-item:hover .product-action .product-action-links button + button {
+  transform: translate(0px, 0px);
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+.product-list-item {
+  border: 2px solid #efefef;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  padding: 30px;
+}
+@media only screen and (max-width: 991px) {
+  .product-list-item {
+    padding: 15px;
+  }
+}
+.product-list-item .product-thumb {
+  border-radius: 12px;
+}
+.product-list-item .product-thumb img {
+  border-radius: 12px;
+}
+.product-list-item .product-info {
+  margin-top: 10px;
+  text-align: left;
+}
+@media only screen and (max-width: 991px) {
+  .product-list-item .product-info {
+    margin-top: 0;
+    padding: 20px 5px 20px;
+  }
+}
+a {
+  color: #721b65;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
