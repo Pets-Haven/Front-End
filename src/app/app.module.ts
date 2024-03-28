@@ -13,6 +13,10 @@ import { FeatureAreaComponent } from './components/feature-area/feature-area.com
 import { SearchHomeIconComponent } from './components/navbar/search-home-icon/search-home-icon.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AsideCartComponent } from './components/navbar/aside-cart/aside-cart.component';
+import { ProductsComponent } from './Pages/products/products.component';
+import { CardRowComponent } from './Pages/products/card-row/card-row.component';
+import { CardColumnComponent } from './Pages/products/card-column/card-column.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,12 +29,17 @@ import { AsideCartComponent } from './components/navbar/aside-cart/aside-cart.co
     FeatureAreaComponent,
     SearchHomeIconComponent,
     AsideCartComponent,
+    ProductsComponent,
+    CardRowComponent,
+    CardColumnComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

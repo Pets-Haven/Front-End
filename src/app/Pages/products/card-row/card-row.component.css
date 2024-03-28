@@ -1,0 +1,41 @@
+
+.product-image img {
+    height: 250px;
+    object-fit: fill;
+    transition: transform 0.3s ease;
+}
+
+
+.product-image:hover img {
+    transform: scale(1.1);
+}
+
+.image-overlay {
+    background-color: rgba(253, 253, 253, 0.15);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-image:hover .image-overlay {
+    opacity: 1;
+}
+
+.btn-cart {
+    background-color: #ffd868 ;
+    color: #721b65;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cart:hover {
+    background-color: #ff7f00;
+}
+
+i {
+    font-size: 20px;
+}
+
