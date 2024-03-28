@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FeatureAreaComponent } from './components/feature-area/feature-area.component';
 import { SearchHomeIconComponent } from './components/navbar/search-home-icon/search-home-icon.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AsideCartComponent } from './components/navbar/aside-cart/aside-cart.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     PageHeaderAreaComponent,
     FeatureAreaComponent,
     SearchHomeIconComponent,
+    AsideCartComponent,
   ],
   imports: [
     BrowserModule,
