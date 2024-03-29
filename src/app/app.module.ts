@@ -4,9 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SignupComponent } from './components/signup/signup.component';
 import { AsideMenuComponent } from './components/navbar/aside-menu/aside-menu.component';
-import { SigninComponent } from './components/signin/signin.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FeatureAreaComponent } from './components/feature-area/feature-area.component';
 import { SearchHomeIconComponent } from './components/navbar/search-home-icon/search-home-icon.component';
@@ -23,15 +21,15 @@ import { DetailsPopUpComponent } from './Pages/products/POPUPS/details-pop-up/de
 import { PageHeaderAreaComponent } from './components/page-header-area/page-header-area.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FooterComponent } from './components/footer/footer.component';
+import { SignupComponent } from './Pages/signup/signup.component';
+import { SigninComponent } from './Pages/signin/signin.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    SignupComponent,
     AsideMenuComponent,
-    SigninComponent,
     SearchHomeIconComponent,
     AsideCartComponent,
     ProductsComponent,
@@ -43,6 +41,8 @@ import { FooterComponent } from './components/footer/footer.component';
     FeatureAreaComponent,
     PageHeaderAreaComponent,
     FooterComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
