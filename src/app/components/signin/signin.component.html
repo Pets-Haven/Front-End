@@ -1,0 +1,107 @@
+<app-page-header-area mainText="Login"></app-page-header-area>
+<!--== Start My Account Area Wrapper ==-->
+<section class="account-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="login-form-content">
+          <form (submit)="handleLogin($event)" [formGroup]="userLoginForm">
+            <div class="row">
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="email"
+                    >Email Address <span class="required">*</span></label
+                  >
+                  <input
+                    id="email"
+                    class="form-control"
+                    type="email"
+                    formControlName="email"
+                  />
+                  <ng-container *ngIf="getEmail.dirty">
+                    <div
+                      *ngIf="getEmail.hasError('required')"
+                      id="emailHelp"
+                      class="form-text text-danger text-capitalize"
+                    >
+                      Email is required.
+                    </div>
+                    <div
+                      *ngIf="getEmail.hasError('email')"
+                      id="emailHelp"
+                      class="form-text text-danger text-capitalize"
+                    >
+                      Invalid email format.
+                    </div>
+                    <div
+                      *ngIf="getEmail.hasError('invalidEmail')"
+                      id="emailHelp"
+                      class="form-text text-danger text-capitalize"
+                    >
+                      Email Not Found.
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="password"
+                    >Password <span class="required">*</span></label
+                  >
+                  <input
+                    id="password"
+                    class="form-control"
+                    type="password"
+                    formControlName="password"
+                  />
+                  <ng-container *ngIf="getEmail.dirty">
+                    <div
+                      *ngIf="getPassword.hasError('required')"
+                      id="emailHelp"
+                      class="form-text text-danger text-capitalize"
+                    >
+                      Password is required.
+                    </div>
+                    <div
+                      *ngIf="getPassword.hasError('invalidPassword')"
+                      id="emailHelp"
+                      class="form-text text-danger text-capitalize"
+                    >
+                      Incorrect Password.
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <button type="submit" class="btn-login">Login</button>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group account-info-group mb--0">
+                  <div class="rememberme-account">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="defaultCheck1"
+                      />
+                      <label class="form-check-label" for="defaultCheck1"
+                        >Remember me</label
+                      >
+                    </div>
+                  </div>
+                  <a class="lost-password" routerLink="/register-new-user"
+                    >Register New User NOW?</a
+                  >
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--== End My Account Area Wrapper ==-->

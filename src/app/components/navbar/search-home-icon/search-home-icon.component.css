@@ -1,0 +1,86 @@
+.aside-search-box-wrapper .search-box-form-wrap .search-note p {
+  font-size: 14px;
+  text-transform: capitalize;
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.aside-search-box-wrapper .search-form {
+  position: relative;
+}
+.aside-search-box-wrapper .search-form .form-control {
+  border: 1px solid #721b65;
+  color: #721b65;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: 0;
+  height: 70px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 70px;
+  text-transform: capitalize;
+  padding: 10px 75px 10px 24px;
+}
+.aside-search-box-wrapper .search-form .form-control::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #721b65;
+}
+.aside-search-box-wrapper .search-form .form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #721b65;
+}
+.aside-search-box-wrapper .search-form .form-control:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #721b65;
+}
+.aside-search-box-wrapper .search-form .form-control:-moz-placeholder {
+  /* Firefox 18- */
+  color: #721b65;
+}
+.aside-search-box-wrapper .search-form .search-button {
+  border: none;
+  background-color: #721b65;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 70px;
+  font-size: 18px;
+  color: #fff;
+}
+.aside-search-box-wrapper .search-form .search-button:hover {
+  color: #721b65;
+  background-color: #ffd868;
+}
+.aside-search-box-wrapper.offcanvas-top {
+  height: 239px;
+}
+.aside-search-box-wrapper .offcanvas-header {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0;
+}
+.aside-search-box-wrapper .offcanvas-body {
+  padding-top: 64px;
+}
+.aside-search-box-wrapper .btn-close {
+  position: absolute;
+  background-image: none;
+  background-color: #721b65;
+  color: #fff;
+  opacity: 1;
+  font-size: 38px;
+  top: 0;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 0;
+  right: 15px;
+}
+.aside-search-box-wrapper .btn-close:hover {
+  color: #721b65;
+  background-color: #ffd868;
+}

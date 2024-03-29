@@ -1,0 +1,92 @@
+
+/*
+-----------------------------------------------------------------------
+  Page Header CSS
+-----------------------------------------------------------------------
+*/
+.page-header-area {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top right;
+  padding: 119px 0 122px;
+  background-image: url("../../../assets/Images/bg1.webp");
+}
+@media only screen and (max-width: 1199px) {
+  .page-header-area {
+    background-position: top left;
+    padding: 75px 0 78px;
+  }
+}
+
+.page-header-content {
+  text-align: left;
+}
+.page-header-content .title {
+  font-weight: 800;
+  text-transform: capitalize;
+  font-size: 48px;
+  letter-spacing: 0;
+  margin: 0 0 22px 0;
+  line-height: 1;
+}
+@media only screen and (max-width: 1199px) {
+  .page-header-content .title {
+    font-size: 36px;
+    margin: 0 0 14px 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .page-header-content .title {
+    font-size: 32px;
+    margin: 0 0 12px 0;
+  }
+}
+
+.breadcrumb-area {
+  margin-bottom: 0;
+}
+.breadcrumb-area .breadcrumb {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: unset;
+      flex-wrap: unset;
+  letter-spacing: 0;
+  line-height: 1;
+  margin-bottom: 0;
+  padding: 0;
+}
+.breadcrumb-area .breadcrumb li {
+  color: #721b65;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 1199px) {
+  .breadcrumb-area .breadcrumb li {
+    font-size: 14px;
+  }
+}
+.breadcrumb-area .breadcrumb li a {
+  color: #0b0b0b;
+}
+.breadcrumb-area .breadcrumb li a:hover {
+  color: #721b65;
+}
+.breadcrumb-area .breadcrumb .breadcrumb-sep {
+  margin: 0 7px 0 9px;
+  vertical-align: 0;
+}
+
+.main-text{
+  text-transform: uppercase !important;
+}
