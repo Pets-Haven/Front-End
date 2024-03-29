@@ -2,7 +2,7 @@
 <div class="container p-5">
   <div class="container">
     <div class="row p-2 d-flex justify-content-between bg-light product-nav">
-      <div class="col-lg-4 col-md-4 col-sm-12">
+      <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
         <p style="color: #f8d363; display: inline-block">
           {{ getCurrentPageProducts().length }}
         </p>
@@ -52,7 +52,7 @@
     </div>
     <div class="row">
       <div class="col-lg-9 col-sm-12">
-        <div class="card bg-dark text-white mt-3">
+        <!-- <div class="card bg-dark text-white mt-3">
           <img
             src="https://htmldemo.net/tuime/tuime/assets/img/shop/banner/3.webp"
             class="card-img"
@@ -61,7 +61,7 @@
           <div
             class="card-img-overlay d-flex justify-content-lg-start p-5"
           ></div>
-        </div>
+        </div> -->
 
         <div *ngIf="!showCardWithoutContent" class="firsview row mt-3">
           <app-card-column
