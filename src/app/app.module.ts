@@ -23,7 +23,9 @@ import { DetailsPopUpComponent } from './Pages/products/POPUPS/details-pop-up/de
 import { PageHeaderAreaComponent } from './components/page-header-area/page-header-area.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FooterComponent } from './components/footer/footer.component';
-
+import { ProductDetailsComponent } from './Pages/products/product-details/product-details.component';
+import { ProductSingleItemComponent } from './Pages/products/product-details/product-single-item/product-single-item.component';
+import { RelatedProductsComponent } from './Pages/products/product-details/related-products/related-products.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,10 @@ import { FooterComponent } from './components/footer/footer.component';
     FeatureAreaComponent,
     PageHeaderAreaComponent,
     FooterComponent,
-  ],
+    ProductDetailsComponent,
+    ProductSingleItemComponent,
+    RelatedProductsComponent,
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
