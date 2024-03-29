@@ -3,15 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
-=======
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { AsideMenuComponent } from './components/navbar/aside-menu/aside-menu.component';
 import { SigninComponent } from './components/signin/signin.component';
-import { PageHeaderAreaComponent } from './components/page-header-area/page-header-area.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FeatureAreaComponent } from './components/feature-area/feature-area.component';
 import { SearchHomeIconComponent } from './components/navbar/search-home-icon/search-home-icon.component';
@@ -25,22 +21,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WishlistPopUpComponent } from './Pages/products/POPUPS/wishlist-pop-up/wishlist-pop-up.component';
 import { CartPopUpComponent } from './Pages/products/POPUPS/cart-pop-up/cart-pop-up.component';
 import { DetailsPopUpComponent } from './Pages/products/POPUPS/details-pop-up/details-pop-up.component';
+import { PageHeaderAreaComponent } from './components/page-header-area/page-header-area.component';
 import { MatDialogModule } from '@angular/material/dialog';
->>>>>>> 24ccd38bbb22c85a3c99d26d372e2bceca22c44a
+
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
-    NavBarComponent,
     FooterComponent,
-=======
     NavbarComponent,
     SignupComponent,
     AsideMenuComponent,
     SigninComponent,
-    PageHeaderAreaComponent,
-    FeatureAreaComponent,
     SearchHomeIconComponent,
     AsideCartComponent,
     ProductsComponent,
@@ -49,7 +41,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     WishlistPopUpComponent,
     CartPopUpComponent,
     DetailsPopUpComponent,
->>>>>>> 24ccd38bbb22c85a3c99d26d372e2bceca22c44a
+    FeatureAreaComponent,
+    PageHeaderAreaComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +51,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatDialogModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],
