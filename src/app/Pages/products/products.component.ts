@@ -19,7 +19,7 @@ export class ProductsComponent {
   constructor(public service: ProductsService) { }
 
   ngOnInit(): void {
-    this.service.getAllproducts().subscribe(data => {
+    this.service.getAllProducts().subscribe((data) => {
       this.products = data;
       this.TempProducts = [...this.products];
     });
@@ -40,13 +40,9 @@ export class ProductsComponent {
     }
   }
 
-  SearchProducts() {
-    if (this.searchValue != "") {
-      this.TempProducts = this.products.filter((product: any) => product.name.toLowerCase().includes(this.searchValue.toLowerCase()));
-    } else {
-      this.TempProducts = [...this.products];
-    }
-    this.currentPage = 1; 
+  SearchProducts(products: any) {
+    this.TempProducts=[...products];
+    this.currentPage=1;
   }
   getCategories(){
     if (this.TempProducts && this.TempProducts.length > 0) {

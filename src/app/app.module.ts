@@ -23,6 +23,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FooterComponent } from './components/footer/footer.component';
 import { SignupComponent } from './Pages/signup/signup.component';
 import { SigninComponent } from './Pages/signin/signin.component';
+import { SearchbarComponent } from './Pages/products/searchbar/searchbar.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { SigninComponent } from './Pages/signin/signin.component';
     PageHeaderAreaComponent,
     FooterComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,
