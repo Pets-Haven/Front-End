@@ -110,11 +110,11 @@
         </div>
         <div class="col-12 mt-5">
           <div class="categories list-group mt-3">
-            <a href="#" class="list-group-item list-group-item-action"
-              >Accesssories (5)</a
+            <a *ngFor="let item of getCategories()" class="list-group-item list-group-item-action"
+              >{{ item }} </a
             >
 
-            <a href="#" class="list-group-item list-group-item-action"
+            <!-- <a href="#" class="list-group-item list-group-item-action"
               >Computer (4)</a
             >
 
@@ -136,7 +136,7 @@
 
             <a href="#" class="list-group-item list-group-item-action"
               >Genuine Leather (9)</a
-            >
+            > -->
           </div>
         </div>
         <div class="col-12 mt-5"></div>
