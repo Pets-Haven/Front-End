@@ -1,0 +1,77 @@
+footer{
+  margin-top: 50px;
+  background-color: #474654;
+  color: #fff;
+  bottom: 0;
+}
+
+h5{
+  font-size: 26px;
+}
+p{
+  padding-bottom: 20px;
+}
+.container
+{
+  padding-bottom: 90px;
+  padding-top: 120px;
+}
+.col-about p{
+  margin-right: -4px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+.socialmedia a{
+  margin-top: 20px;
+  border-radius: 7px;
+  color: #721b65;
+  background-color: #fff;
+  transition: all 0.4s ease-out;
+  box-shadow: 0 0 0 rgba(255, 216, 104, 0)
+}
+.socialmedia a:hover{
+  background-color: rgb(255, 216, 104);
+  transform: scale(1.05, 1.05);
+  box-shadow: 0 4px 8px rgba(255, 216, 104,0.2)
+}
+
+button:hover {
+  color: #FFD868;
+} 
+.col-info a,
+.cnt-us a,
+.policy a{
+  text-decoration: none;
+  color: #fff;
+}
+.col-info ul li a:hover,
+.cnt-us ul li a:hover,
+.policy ul li a:hover{
+  color: #FFD868 !important;
+}
+.cnt-us span{
+  color: #FFD868;
+}
+span:hover{
+  text-decoration: underline;
+}
+.cnt-us i {
+  background-color: #FFD868;
+  color: #721b65;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 40px;
+}
+span{
+  color: #FFD868;
+  font-size: 16px;
+  font-weight: bold;
+}
+.line{
+  border-top: 1px solid #dedada;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
