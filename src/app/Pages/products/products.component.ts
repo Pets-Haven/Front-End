@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { product } from 'src/app/services/product';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -23,6 +24,7 @@ export class ProductsComponent {
       this.TempProducts = [...this.products];
     });
   }
+  
 
   toggleCardType(flag: boolean) {
     this.showCardWithoutContent = flag;
@@ -46,12 +48,25 @@ export class ProductsComponent {
     }
     this.currentPage = 1; 
   }
+  getCategories(){
+    if (this.TempProducts && this.TempProducts.length > 0) {
+    const uniqueCategories = new Set(this.TempProducts.map((product:product) => product.type));
+    return Array.from(uniqueCategories);
+    }
+    else{
+      return [];
+    }
+  }
 
   
-  getCurrentPageProducts(): any[] {
-    const startIndex = (this.currentPage - 1) * this.itemsPerPage;
-    const endIndex = startIndex + this.itemsPerPage;
-    return this.TempProducts.slice(startIndex, endIndex);
+  getCurrentPageProducts(): product[] {
+    if (this.TempProducts && this.TempProducts.length > 0) {
+      const startIndex = (this.currentPage - 1) * this.itemsPerPage;
+      const endIndex = startIndex + this.itemsPerPage;
+      return this.TempProducts.slice(startIndex, endIndex);
+    } else {
+      return [];
+    }
   }
 
   
@@ -69,6 +84,9 @@ export class ProductsComponent {
   }
 
   totalPages(): number {
+    if (this.TempProducts && this.TempProducts.length > 0)
     return Math.ceil(this.TempProducts.length / this.itemsPerPage);
+  else
+    return 1;
   }
 }
