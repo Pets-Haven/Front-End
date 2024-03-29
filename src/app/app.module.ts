@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { AsideMenuComponent } from './components/navbar/aside-menu/aside-menu.component';
@@ -23,12 +22,12 @@ import { CartPopUpComponent } from './Pages/products/POPUPS/cart-pop-up/cart-pop
 import { DetailsPopUpComponent } from './Pages/products/POPUPS/details-pop-up/details-pop-up.component';
 import { PageHeaderAreaComponent } from './components/page-header-area/page-header-area.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
     NavbarComponent,
     SignupComponent,
     AsideMenuComponent,
@@ -42,7 +41,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     CartPopUpComponent,
     DetailsPopUpComponent,
     FeatureAreaComponent,
-    PageHeaderAreaComponent
+    PageHeaderAreaComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
