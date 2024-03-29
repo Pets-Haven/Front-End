@@ -49,10 +49,13 @@ export class ProductsComponent {
     this.currentPage = 1; 
   }
   getCategories(){
-    
+    if (this.TempProducts && this.TempProducts.length > 0) {
     const uniqueCategories = new Set(this.TempProducts.map((product:product) => product.type));
     return Array.from(uniqueCategories);
-     
+    }
+    else{
+      return [];
+    }
   }
 
   
@@ -81,6 +84,9 @@ export class ProductsComponent {
   }
 
   totalPages(): number {
+    if (this.TempProducts && this.TempProducts.length > 0)
     return Math.ceil(this.TempProducts.length / this.itemsPerPage);
+  else
+    return 1;
   }
 }
