@@ -24,6 +24,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SignupComponent } from './Pages/signup/signup.component';
 import { SigninComponent } from './Pages/signin/signin.component';
 import { SearchbarComponent } from './Pages/products/searchbar/searchbar.component';
+import { CategoryFilterComponent } from './Pages/products/category-filter/category-filter.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { SearchbarComponent } from './Pages/products/searchbar/searchbar.compone
     FooterComponent,
     SignupComponent,
     SigninComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    CategoryFilterComponent
   ],
   imports: [
     BrowserModule,

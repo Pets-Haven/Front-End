@@ -8,7 +8,7 @@
         </p>
         <p style="display: inline-block">&nbsp; Products Found out of &nbsp;</p>
         <p style="color: #f8d363; display: inline-block">
-          {{ products?products.length:0 }}
+          {{ products ? products.length : 0 }}
         </p>
       </div>
       <div
@@ -52,7 +52,6 @@
     </div>
     <div class="row">
       <div class="col-lg-9 col-sm-12">
-
         <div *ngIf="!showCardWithoutContent" class="firsview row mt-3">
           <app-card-column
             class="col-lg-4"
@@ -83,13 +82,9 @@
       <div class="col-lg-3 col-sm-12 mt-3">
         <app-searchbar (searchResult)="SearchProducts($event)"></app-searchbar>
         <div class="col-12 mt-5">
-          <div class="categories list-group mt-3">
-            <a *ngFor="let item of getCategories()" class="list-group-item list-group-item-action"
-              >{{ item }} </a
-            >
-
-           
-          </div>
+          <app-category-filter
+            (categoryfilter)="filterByCategory($event)"
+          ></app-category-filter>
         </div>
         <div class="col-12 mt-5"></div>
       </div>
