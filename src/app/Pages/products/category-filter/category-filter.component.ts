@@ -19,10 +19,5 @@ export class CategoryFilterComponent implements OnInit {
       this.categories = Categories;
     });
   }
-  filterbycategory(categoryid: any) {
-    this.categoryfilter.emit(
-      this.productsService.filterProductsbycategory(categoryid)
-    );
-    console.log(this.productsService.filterProductsbycategory(categoryid));
-  }
+
 }

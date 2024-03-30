@@ -8,9 +8,10 @@ import { SignupComponent } from './Pages/signup/signup.component';
 const routes: Routes = [
   { path: 'register-new-user', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
-  { path: 'products', component: ProductsComponent },
+  { path: 'products', redirectTo: 'products/0', pathMatch: 'full' },
   { path: 'products/details', component: ProductDetailsComponent },
   { path: 'products-details/:id', component: ProductDetailsComponent },
+  {path:'products/:category',component:ProductsComponent},
 ];
 
 @NgModule({

@@ -11,8 +11,10 @@ export class RelatedProductsComponent {
   @Input() categoryid: any = '';
   relatedProducts: any;
   ngOnInit(): void {
-    this.relatedProducts = this.productsService.filterProductsbycategory(
+     this.productsService.filterProductsbycategory(
       this.categoryid
-    );
+    ).subscribe((data) => {
+      this.relatedProducts = data;
+    });
   }
 }

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -30,10 +32,12 @@ export class ProductsService {
     } else return [];
   }
   filterProductsbycategory(id: string) {
+    console.log("sobeh");
     if (id != '0') {
-      return this.products.filter((product: any) => product.categoryId == id);
-    } else {
-      return this.products;
-    }
-  }
+      return this.http.get(`${this.baseUrl}?categoryId=${id}`);
+     // return this.products.filter((product: any) => product.categoryId == id);
+    } 
+  else return this.getAllProducts();
+
+}
 }
