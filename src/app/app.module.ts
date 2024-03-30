@@ -4,9 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { SignupComponent } from './components/signup/signup.component';
 import { AsideMenuComponent } from './components/navbar/aside-menu/aside-menu.component';
-import { SigninComponent } from './components/signin/signin.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FeatureAreaComponent } from './components/feature-area/feature-area.component';
 import { SearchHomeIconComponent } from './components/navbar/search-home-icon/search-home-icon.component';
@@ -23,17 +21,23 @@ import { DetailsPopUpComponent } from './Pages/products/POPUPS/details-pop-up/de
 import { PageHeaderAreaComponent } from './components/page-header-area/page-header-area.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FooterComponent } from './components/footer/footer.component';
+<<<<<<< HEAD
 import { ProductDetailsComponent } from './Pages/products/product-details/product-details.component';
 import { ProductSingleItemComponent } from './Pages/products/product-details/product-single-item/product-single-item.component';
 import { RelatedProductsComponent } from './Pages/products/product-details/related-products/related-products.component';
+=======
+import { SignupComponent } from './Pages/signup/signup.component';
+import { SigninComponent } from './Pages/signin/signin.component';
+import { SearchbarComponent } from './Pages/products/searchbar/searchbar.component';
+import { CategoryFilterComponent } from './Pages/products/category-filter/category-filter.component';
+
+>>>>>>> 34ba6a1535b05edd68b5d7815f589a3630afe0f2
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    SignupComponent,
     AsideMenuComponent,
-    SigninComponent,
     SearchHomeIconComponent,
     AsideCartComponent,
     ProductsComponent,
@@ -45,10 +49,18 @@ import { RelatedProductsComponent } from './Pages/products/product-details/relat
     FeatureAreaComponent,
     PageHeaderAreaComponent,
     FooterComponent,
+<<<<<<< HEAD
     ProductDetailsComponent,
     ProductSingleItemComponent,
     RelatedProductsComponent,
     ],
+=======
+    SignupComponent,
+    SigninComponent,
+    SearchbarComponent,
+    CategoryFilterComponent
+  ],
+>>>>>>> 34ba6a1535b05edd68b5d7815f589a3630afe0f2
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,0 +1,15 @@
+<div class="categories list-group mt-3">
+  <button
+    class="list-group-item list-group-item-action"
+    (click)="filterbycategory('0')"
+  >
+    All
+  </button>
+  <button
+    *ngFor="let item of categories"
+    class="list-group-item list-group-item-action"
+    (click)="filterbycategory(item.id)"
+  >
+    {{ item.name }} ({{ item.numOfProducts }})
+  </button>
+</div>
