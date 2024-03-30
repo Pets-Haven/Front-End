@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog'; 
+import { Component, Input } from '@angular/core';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-related-products',
   templateUrl: './related-products.component.html',
-  styleUrls: ['./related-products.component.css']
+  styleUrls: ['./related-products.component.css'],
 })
 export class RelatedProductsComponent {
-  products = [
-    { name: 'Fusion Backpack', price: 45, imageSrc: 'assets/Images/1.webp' },
-    { name: 'Savvy Shoulder Tote', price: 45, imageSrc: 'assets/Images/1.webp' },
-    { name: 'Voyage Yoga Bag', price: 45, imageSrc: 'assets/Images/1.webp' },
-    { name: 'Wayfarer Messenger Bag', price: 45, imageSrc: 'assets/Images/1.webp' },
-  ];
+  constructor(public productsService: ProductsService) {}
+  @Input() categoryid: any = '';
+  relatedProducts: any;
+  ngOnInit(): void {
+    this.relatedProducts = this.productsService.filterProductsbycategory(
+      this.categoryid
+    );
+  }
 }

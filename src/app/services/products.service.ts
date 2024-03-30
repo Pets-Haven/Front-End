@@ -16,6 +16,10 @@ export class ProductsService {
   getAllProducts() {
     return this.http.get(this.baseUrl);
   }
+  getproductbyid(id: string) {
+    return this.http.get(`${this.baseUrl}/${id}`);
+    // return this.products.filter((product: any) => product.id == id)[0];
+  }
   searchProducts(searchValue: string) {
     if (searchValue !== '' && this.products) {
       return this.products.filter((product: any) =>

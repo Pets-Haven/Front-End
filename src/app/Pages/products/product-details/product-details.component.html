@@ -1,4 +1,170 @@
 <app-page-header-area mainText="Products"></app-page-header-area>
 
-<app-product-single-item></app-product-single-item>
-<app-related-products></app-related-products>
+<!-- <div class="container pt--0 pb--0">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="product-single-thumb">
+        <img
+          class="details-img"
+          src="https://petsegypt.com/web/image/product.template/7163/image_1024?unique=33d7e29s"
+          alt="Organic Food Juice"
+          style="height: 560px; width: 100%"
+        />
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="product-single-info">
+        <h3 class="main-title">{{ product?.name }}</h3>
+        <div class="prices">
+          <span class="price">${{ product?.price }}</span>
+        </div>
+        <p>
+          {{ product?.description }}
+        </p>
+        <div class="product-single-meta">
+          <ul>
+            <li><span>Weight:</span> {{ product?.totalWeight }}</li>
+            <li>
+              <span>For:</span>
+              <a href="shop.html">{{ product?.animalType }}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="product-quick-action">
+          <div class="qty-wrap">
+            <div class="pro-qty">
+              <input
+                type="text"
+                [(ngModel)]="quantityNumber"
+                title="Quantity"
+                value="01"
+              />
+              <div (click)="minusbutton()" class="dec qty-btn">-</div>
+              <div (click)="addbutton()" class="inc qty-btn">+</div>
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn-product-cart"
+            data-bs-toggle="modal"
+            (click)="addtocart()"
+          >
+            Add To Cart
+          </button>
+          <button
+            type="button"
+            class="btn-product-wishlist"
+            data-bs-toggle="modal"
+            (click)="addtowhishlist()"
+          >
+            <i class="pe-7s-like"><i class="bi bi-heart"></i></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<section class="product-area product-single-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="product-single-item">
+          <div class="row">
+            <div class="col-lg-6">
+              <!--== Start Product Thumbnail Area ==-->
+              <div class="product-single-thumb">
+                <div
+                  class="swiper single-product-thumb single-product-thumb-slider"
+                >
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <a class="lightbox-image" data-fancybox="gallery">
+                        <img
+                          src="https://petsegypt.com/web/image/product.template/7163/image_1024?unique=33d7e29s"
+                          width="570"
+                          height="675"
+                          style="width: 570px; height: 675px"
+                          alt="Image-HasTech"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--== End Product Thumbnail Area ==-->
+            </div>
+            <div class="col-lg-6">
+              <!--== Start Product Info Area ==-->
+              <div class="product-single-info">
+                <h3 class="main-title">{{ product.name }}</h3>
+                <div class="prices">
+                  <span class="price">${{ product.price }}</span>
+                </div>
+                <div class="rating-box-wrap">
+                  <div class="rating-box">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <div class="review-status">
+                    <a href="javascript:void(0)">(5 Customer Review)</a>
+                  </div>
+                </div>
+                <p>
+                  {{ product.description }}
+                </p>
+                <div class="product-single-meta">
+                  <ul>
+                    <li><span>Weight:</span> {{ product.totalWeight }}</li>
+                    <li>
+                      <span>Categories:</span>
+                      <a href="shop.html">{{ category.name }}</a>
+                    </li>
+                    <li>
+                      <span>For:</span>
+                      <a href="shop.html">{{ product.animalType }}</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="product-quick-action">
+                  <div class="qty-wrap">
+                    <div class="pro-qty">
+                      <input
+                        type="text"
+                        [(ngModel)]="quantityNumber"
+                        title="Quantity"
+                        value="01"
+                      />
+                      <div (click)="minusbutton()" class="dec qty-btn">-</div>
+                      <div (click)="addbutton()" class="inc qty-btn">+</div>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-product-cart"
+                    data-bs-toggle="modal"
+                    (click)="addtocart()"
+                  >
+                    Add To Cart
+                  </button>
+                  <button
+                    type="button"
+                    class="btn-product-wishlist"
+                    data-bs-toggle="modal"
+                    (click)="addtowhishlist()"
+                  >
+                    <i class="bi bi-heart heart"></i>
+                  </button>
+                </div>
+              </div>
+              <!--== End Product Info Area ==-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-related-products [categoryid]="product.categoryId"></app-related-products>

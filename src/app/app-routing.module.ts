@@ -6,15 +6,15 @@ import { SigninComponent } from './Pages/signin/signin.component';
 import { SignupComponent } from './Pages/signup/signup.component';
 
 const routes: Routes = [
-  {path: 'register-new-user', component: SignupComponent},
-  {path: 'signin', component: SigninComponent},
-  {path:'products',component:ProductsComponent},
-  {path: 'products/details',component:ProductDetailsComponent}
-
+  { path: 'register-new-user', component: SignupComponent },
+  { path: 'signin', component: SigninComponent },
+  { path: 'products', component: ProductsComponent },
+  { path: 'products/details', component: ProductDetailsComponent },
+  { path: 'products-details/:id', component: ProductDetailsComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

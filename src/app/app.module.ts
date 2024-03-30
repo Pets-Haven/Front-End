@@ -22,7 +22,6 @@ import { PageHeaderAreaComponent } from './components/page-header-area/page-head
 import { MatDialogModule } from '@angular/material/dialog';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductDetailsComponent } from './Pages/products/product-details/product-details.component';
-import { ProductSingleItemComponent } from './Pages/products/product-details/product-single-item/product-single-item.component';
 import { RelatedProductsComponent } from './Pages/products/product-details/related-products/related-products.component';
 import { SigninComponent } from './Pages/signin/signin.component';
 import { SignupComponent } from './Pages/signup/signup.component';
@@ -48,11 +47,9 @@ import { CategoryFilterComponent } from './Pages/products/category-filter/catego
     PageHeaderAreaComponent,
     FooterComponent,
     ProductDetailsComponent,
-    ProductSingleItemComponent,
     RelatedProductsComponent,
     SearchbarComponent,
-    CategoryFilterComponent
-
+    CategoryFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,9 +58,9 @@ import { CategoryFilterComponent } from './Pages/products/category-filter/catego
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

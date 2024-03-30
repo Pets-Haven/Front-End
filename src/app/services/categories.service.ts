@@ -15,4 +15,7 @@ export class CategoriesService {
   getAllCategories() {
     return this.http.get(this.baseUrl);
   }
+  getcategorybyid(id: string) {
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
 }

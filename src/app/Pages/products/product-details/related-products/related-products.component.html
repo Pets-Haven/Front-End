@@ -9,9 +9,9 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-6 col-lg-3" *ngFor="let product of products">
-        <app-card-column></app-card-column>
-      </div> 
+      <div class="col-sm-6 col-lg-3" *ngFor="let product of relatedProducts">
+        <app-card-column [product]="product"></app-card-column>
+      </div>
     </div>
   </div>
 </section>

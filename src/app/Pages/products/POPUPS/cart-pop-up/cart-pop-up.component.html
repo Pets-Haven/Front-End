@@ -28,7 +28,11 @@
               />
             </div>
             <h4 class="product-name">
-              <a href="single-product.html">{{ data.name }}</a>
+              <a
+                routerLink="products-details/{{ data.id }}"
+                [mat-dialog-close]
+                >{{ data.name }}</a
+              >
             </h4>
           </div>
         </div>

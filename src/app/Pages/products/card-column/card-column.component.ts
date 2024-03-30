@@ -12,17 +12,7 @@ import { product } from 'src/app/services/product';
 })
 export class CardColumnComponent {
   constructor(private dialogRef: MatDialog) {}
-  @Input() product: product = {
-    id: 0,
-    name: '',
-    price: 0,
-    description: '',
-    qunantity: 0,
-    totalWeight: 0,
-    animalType: '',
-    type: '',
-    image: '',
-  };
+  @Input() product: any;
 
   addtowhishlist(): void {
     this.dialogRef.open(WishlistPopUpComponent, {
