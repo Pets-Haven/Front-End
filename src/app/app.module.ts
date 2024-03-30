@@ -21,21 +21,19 @@ import { DetailsPopUpComponent } from './Pages/products/POPUPS/details-pop-up/de
 import { PageHeaderAreaComponent } from './components/page-header-area/page-header-area.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FooterComponent } from './components/footer/footer.component';
-<<<<<<< HEAD
 import { ProductDetailsComponent } from './Pages/products/product-details/product-details.component';
 import { ProductSingleItemComponent } from './Pages/products/product-details/product-single-item/product-single-item.component';
 import { RelatedProductsComponent } from './Pages/products/product-details/related-products/related-products.component';
-=======
-import { SignupComponent } from './Pages/signup/signup.component';
 import { SigninComponent } from './Pages/signin/signin.component';
+import { SignupComponent } from './Pages/signup/signup.component';
 import { SearchbarComponent } from './Pages/products/searchbar/searchbar.component';
 import { CategoryFilterComponent } from './Pages/products/category-filter/category-filter.component';
-
->>>>>>> 34ba6a1535b05edd68b5d7815f589a3630afe0f2
 
 @NgModule({
   declarations: [
     AppComponent,
+    SigninComponent,
+    SignupComponent,
     NavbarComponent,
     AsideMenuComponent,
     SearchHomeIconComponent,
@@ -49,18 +47,13 @@ import { CategoryFilterComponent } from './Pages/products/category-filter/catego
     FeatureAreaComponent,
     PageHeaderAreaComponent,
     FooterComponent,
-<<<<<<< HEAD
     ProductDetailsComponent,
     ProductSingleItemComponent,
     RelatedProductsComponent,
-    ],
-=======
-    SignupComponent,
-    SigninComponent,
     SearchbarComponent,
     CategoryFilterComponent
+
   ],
->>>>>>> 34ba6a1535b05edd68b5d7815f589a3630afe0f2
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -73,4 +66,4 @@ import { CategoryFilterComponent } from './Pages/products/category-filter/catego
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
