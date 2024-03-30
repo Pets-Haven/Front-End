@@ -1,0 +1,58 @@
+.shop-sidebar-category {
+  margin-top: 40px;
+  padding: 34px 30px 41px;
+}
+.sidebar-title {
+  color: #525252;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  display: inline-block;
+  margin-bottom: 24px;
+  position: relative;
+  padding-left: 22px;
+}
+.sidebar-title:before {
+  border: 2px solid #721b65;
+  border-radius: 50%;
+  content: "";
+  height: 11px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  width: 11px;
+  transform: translate(0px, -50%);
+  -webkit-transform: translate(0px, -50%);
+  -moz-transform: translate(0px, -50%);
+  -ms-transform: translate(0px, -50%);
+  -o-transform: translate(0px, -50%);
+}
+.sidebar-title {
+  margin-bottom: 37px;
+}
+
+.sidebar-title {
+  margin-bottom: 27px;
+}
+
+.category-list li {
+  line-height: 1.8125;
+  display: block;
+}
+.category-list li a {
+  color: #737070;
+  display: block;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.8125;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.category-list li a:hover {
+  color: #721b65;
+  text-decoration: underline;
+  cursor: pointer;
+}
