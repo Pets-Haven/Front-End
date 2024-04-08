@@ -12,11 +12,9 @@ export class ProductsComponent {
   products: any;
   sort: string = 'Default';
   searchValue: string = '';
-  TempProducts: any;
   currentPage: number = 1;
   itemsPerPage: number = 6;
   showCardWithoutContent: boolean = false;
-  categoryId:string='0'
 
   constructor(public service: ProductsService,public route: ActivatedRoute) {
 
@@ -24,20 +22,25 @@ export class ProductsComponent {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-     this.categoryId= params['category']; 
-   
+     let urlstring:any;
+   if(params['searchvalue']){
+     urlstring=params['searchvalue'];
+     this.service.SearchProducts(urlstring).subscribe((data:any) => {
+       this.products = data;
+     })
 
-    
-   
-  
+   }
+   else if(params['categoryid']){
+     urlstring=params['categoryid'];
+     this.service.filterProductsbycategory(urlstring).subscribe((data:any) => {
+      this.products = data;
       
-       this.service.filterProductsbycategory(this.categoryId).subscribe((data:any) => {
-        this.products = data;
-        this.TempProducts = [...this.products];
-      });
+    });
+   }
+       
+      
+    
 
-      console.log(this.categoryId);
-      console.log(this.service.filterProductsbycategory(this.categoryId));
     });
     
   }
@@ -48,26 +51,21 @@ export class ProductsComponent {
 
   Sortproducts() {
     if (this.sort == 'LH') {
-      this.TempProducts.sort((a: any, b: any) => a.price - b.price);
+      this.products.sort((a: any, b: any) => a.price - b.price);
     } else if (this.sort == 'HL') {
-      this.TempProducts.sort((a: any, b: any) => b.price - a.price);
+      this.products.sort((a: any, b: any) => b.price - a.price);
     } else {
-      this.TempProducts.sort((a: any, b: any) => a.id - b.id);
+      this.products.sort((a: any, b: any) => a.id - b.id);
     }
   }
 
-  SearchProducts(products: any) {
-    this.TempProducts = [...products];
-    this.currentPage = 1;
-  }
-  filterByCategory(categoryId: string) {
-    return this.service.filterProductsbycategory(categoryId);
-  }
+  
+  
   getCurrentPageProducts(): product[] {
-    if (this.TempProducts && this.TempProducts.length > 0) {
+    if (this.products && this.products.length > 0) {
       const startIndex = (this.currentPage - 1) * this.itemsPerPage;
       const endIndex = startIndex + this.itemsPerPage;
-      return this.TempProducts.slice(startIndex, endIndex);
+      return this.products.slice(startIndex, endIndex);
     } else {
       return [];
     }
@@ -86,8 +84,8 @@ export class ProductsComponent {
   }
 
   totalPages(): number {
-    if (this.TempProducts && this.TempProducts.length > 0)
-      return Math.ceil(this.TempProducts.length / this.itemsPerPage);
+    if (this.products && this.products.length > 0)
+      return Math.ceil(this.products.length / this.itemsPerPage);
     else return 1;
   }
 }

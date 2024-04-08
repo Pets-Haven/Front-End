@@ -1,12 +1,12 @@
 <div class="shop-widget shop-sidebar-category bg-light rounded">
-  <h4 class="sidebar-title">Categoris</h4>
+  <h4 class="sidebar-title">Categories</h4>
   <div class="sidebar-category">
     <ul class="category-list mb--0">
       <li>
-        <a routerLink="/products/{{ 0}}"> All </a>
+        <a routerLink="/products/category/{{ 0}}"> All </a>
       </li>
       <li *ngFor="let item of categories">
-        <a routerLink="/products/{{ item.id }}">
+        <a routerLink="/products/category/{{ item.id }}">
           {{ item.name }}<span> ({{ item.numOfProducts }})</span>
         </a>
       </li>

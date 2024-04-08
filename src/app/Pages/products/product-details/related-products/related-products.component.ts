@@ -8,7 +8,7 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class RelatedProductsComponent {
   constructor(public productsService: ProductsService) {}
-  @Input() categoryid: any = '';
+  @Input() categoryid: number = 0;
   relatedProducts: any;
   ngOnInit(): void {
      this.productsService.filterProductsbycategory(

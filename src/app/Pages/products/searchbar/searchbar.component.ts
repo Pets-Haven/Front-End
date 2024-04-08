@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -8,13 +9,10 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class SearchbarComponent {
   searchValue: string = '';
-  @Output() searchResult = new EventEmitter<any>();
 
-  constructor(private productService: ProductsService) {}
-
-  searchProducts() {
-    this.searchResult.emit(
-      this.productService.searchProducts(this.searchValue)
-    );
+  constructor(private productService: ProductsService,public route:Router) {}
+ searchProducts() {
+    this.route.navigate(['products/search', this.searchValue]);
+ 
   }
 }
