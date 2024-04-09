@@ -12,7 +12,6 @@ export class CategoryFilterComponent implements OnInit {
     public categoryService: CategoriesService
   ) {}
   categories: any;
-  @Output() categoryfilter = new EventEmitter<any>();
 
   ngOnInit(): void {
     this.categoryService.getAllCategories().subscribe((Categories) => {

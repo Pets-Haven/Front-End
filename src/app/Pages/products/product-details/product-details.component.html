@@ -53,14 +53,14 @@
                 </p>
                 <div class="product-single-meta">
                   <ul>
-                    <li><span>Weight:</span> {{ product.totalWeight }}</li>
+                    <li><span>Weight: </span> {{ product.totalWeight }}</li>
                     <li>
-                      <span>Categories:</span>
-                      <a href="shop.html">{{ category.name }}</a>
+                      <span>Categories: </span>
+                      <a [routerLink]="['/products/category', product.categoryId]" >{{ product.categoryName }}</a>
                     </li>
                     <li>
-                      <span>For:</span>
-                      <a href="shop.html">{{ product.animalType }}</a>
+                      <span>For: </span>
+                      <span >{{ product.animalType }}</span>
                     </li>
                   </ul>
                 </div>

@@ -7,12 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductsService {
-  baseUrl: string = 'http://localhost:3000/products';
+  baseUrl: string = 'http://localhost:5031/api/product';
   products: any;
   constructor(public http: HttpClient) {
-    this.getAllProducts().subscribe((products) => {
-      this.products = products;
-    });
   }
 
   getAllProducts() {
@@ -20,9 +17,8 @@ export class ProductsService {
   }
   getproductbyid(id: string) {
     return this.http.get(`${this.baseUrl}/${id}`);
-    // return this.products.filter((product: any) => product.id == id)[0];
   }
-  searchProducts(searchValue: string) {
+  /*searchProducts(searchValue: string) {
     if (searchValue !== '' && this.products) {
       return this.products.filter((product: any) =>
         product.name.toLowerCase().includes(searchValue.toLowerCase())
@@ -30,12 +26,13 @@ export class ProductsService {
     } else if (this.products) {
       return this.products;
     } else return [];
+  }*/
+  SearchProducts(searchValue: string) {
+    return this.http.get(`${this.baseUrl}/${searchValue}`);
   }
-  filterProductsbycategory(id: string) {
-    console.log("sobeh");
-    if (id != '0') {
-      return this.http.get(`${this.baseUrl}?categoryId=${id}`);
-     // return this.products.filter((product: any) => product.categoryId == id);
+  filterProductsbycategory(id: number) {
+    if (id != 0) {
+      return this.http.get(`${this.baseUrl}/category/${id}`);
     } 
   else return this.getAllProducts();
 

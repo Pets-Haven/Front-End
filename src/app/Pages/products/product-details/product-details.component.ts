@@ -28,11 +28,6 @@ export class ProductDetailsComponent implements OnInit {
       this.productid = params['id'];
       this.productservice.getproductbyid(this.productid).subscribe((data) => {
         this.product = data;
-        this.categoryService
-          .getcategorybyid(this.product.categoryId)
-          .subscribe((data) => {
-            this.category = data;
-          });
       });
     });
   }

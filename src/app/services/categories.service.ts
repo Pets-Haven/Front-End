@@ -5,17 +5,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class CategoriesService {
-  baseUrl: string = 'http://localhost:3000/Categories';
+  baseUrl: string = 'http://localhost:5031/api/Category';
   Categories: any;
   constructor(public http: HttpClient) {
-    this.getAllCategories().subscribe((Categories) => {
-      this.Categories = Categories;
-    });
+
   }
   getAllCategories() {
     return this.http.get(this.baseUrl);
   }
-  getcategorybyid(id: string) {
-    return this.http.get(`${this.baseUrl}/${id}`);
-  }
+
 }
