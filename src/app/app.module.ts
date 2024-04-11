@@ -27,6 +27,14 @@ import { SigninComponent } from './Pages/signin/signin.component';
 import { SignupComponent } from './Pages/signup/signup.component';
 import { SearchbarComponent } from './Pages/products/searchbar/searchbar.component';
 import { CategoryFilterComponent } from './Pages/products/category-filter/category-filter.component';
+import { HomeComponent } from './home/home.component';
+import { CoverComponent } from './home/cover/cover.component';
+import { TrendingComponent } from './home/trending/trending.component';
+import { BannerComponent } from './home/banner/banner.component';
+import { NewCollectionComponent } from './home/new-collection/new-collection.component';
+import { Cover2Component } from './home/cover2/cover2.component';
+import { AboutAreaComponent } from './home/about-area/about-area.component';
+
 
 @NgModule({
   declarations: [
@@ -50,6 +58,13 @@ import { CategoryFilterComponent } from './Pages/products/category-filter/catego
     RelatedProductsComponent,
     SearchbarComponent,
     CategoryFilterComponent,
+    HomeComponent,
+    CoverComponent,
+    TrendingComponent,
+    BannerComponent,
+    NewCollectionComponent,
+    Cover2Component,
+    AboutAreaComponent,
   ],
   imports: [
     BrowserModule,

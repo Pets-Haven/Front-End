@@ -1,0 +1,255 @@
+.bg-theme-color {
+  background-color: #721b65 !important;
+}
+.divider-style1 .divider-thumb {
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* currently supported by Chrome, Edge, Opera and Firefox */
+  width: 100%;
+  z-index: 1;
+}
+@media only screen and (max-width: 991px) {
+  .divider-style1 .divider-thumb {
+    display: none;
+  }
+}
+.divider-style1 .divider-thumb img {
+  pointer-events: none;
+  position: absolute;
+  width: auto;
+}
+@media only screen and (max-width: 1399.98px) {
+  .divider-style1 .divider-thumb img {
+    width: 240px;
+  }
+}
+.divider-style1 .divider-thumb-left img {
+  bottom: 19px;
+  right: calc(50% - 163px);
+}
+@media only screen and (max-width: 1399.98px) {
+  .divider-style1 .divider-thumb-left img {
+    right: calc(50% - 92px);
+  }
+}
+.divider-style1 .divider-thumb-right img {
+  bottom: 32px;
+  right: 36px;
+}
+.divider-style1 .divider-thumb .shape-circle {
+  background-color: #ffd868;
+  clip-path: polygon(0 0, 78% 0, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 78% 0, 100% 100%, 0 100%);
+  height: 100%;
+  position: absolute;
+  width: calc(100% + 41px);
+  z-index: -1;
+}
+@media only screen and (max-width: 991px) {
+  .divider-style1 .divider-thumb .shape-circle {
+    display: none;
+  }
+}
+.divider-style1 .divider-content {
+  max-width: 454px;
+  margin: 0 auto;
+  position: relative;
+  padding: 120px 0 126px;
+  z-index: 1;
+}
+@media only screen and (max-width: 1399.98px) {
+  .divider-style1 .divider-content {
+    padding: 80px 0 86px;
+  }
+}
+.divider-style1 .divider-content .sub-title {
+  color: #ffd868;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1;
+  margin-bottom: 13px;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 1199px) {
+  .divider-style1 .divider-content .sub-title {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+}
+.divider-style1 .divider-content .title {
+  color: #fff;
+  font-size: 48px;
+}
+@media only screen and (max-width: 1399.98px) {
+  .divider-style1 .divider-content .title {
+    font-size: 42px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .divider-style1 .divider-content .title {
+    font-size: 38px;
+    margin-bottom: 4px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .divider-style1 .divider-content .title {
+    font-size: 34px;
+  }
+}
+.divider-style1 .divider-content .desc {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.56;
+  margin-bottom: 45px;
+}
+@media only screen and (max-width: 1399.98px) {
+  .divider-style1 .divider-content .desc {
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .divider-style1 .divider-content .desc {
+    font-size: 15px;
+  }
+}
+.divider-style1 .divider-content .shape-object {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+@media only screen and (max-width: 1199px) {
+  .divider-style1 .divider-content .shape-object {
+    width: 240px;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .divider-style2 {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .divider-style2 {
+    padding: 50px 0 83px;
+  }
+}
+.divider-style2 .divider-thumb {
+  position: relative;
+  height: 100%;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* currently supported by Chrome, Edge, Opera and Firefox */
+}
+.divider-style2 .divider-thumb img {
+  max-width: none;
+  float: right;
+  position: absolute;
+  left: -12px;
+  bottom: -110px;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* currently supported by Chrome, Edge, Opera and Firefox */
+}
+@media only screen and (max-width: 1199px) {
+  .divider-style2 .divider-thumb img {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    max-width: 100%;
+    float: none;
+  }
+}
+.divider-style2 .divider-content {
+  max-width: 454px;
+  margin: 0 0 0 70px;
+  position: relative;
+  padding: 121px 0 125px;
+  z-index: 1;
+}
+@media only screen and (max-width: 1199px) {
+  .divider-style2 .divider-content {
+    margin: 0 0 0 40px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .divider-style2 .divider-content {
+    padding: 0;
+    margin: 40px 0 0 28px;
+  }
+}
+.divider-style2 .divider-content .sub-title {
+  color: #ffd868;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1;
+  margin-bottom: 13px;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 1199px) {
+  .divider-style2 .divider-content .sub-title {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+}
+.divider-style2 .divider-content .title {
+  color: #fff;
+  font-size: 48px;
+}
+@media only screen and (max-width: 1199px) {
+  .divider-style2 .divider-content .title {
+    font-size: 38px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .divider-style2 .divider-content .title {
+    font-size: 33px;
+  }
+}
+.divider-style2 .divider-content .desc {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.56;
+  margin-bottom: 45px;
+}
+@media only screen and (max-width: 1199px) {
+  .divider-style2 .divider-content .desc {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+}

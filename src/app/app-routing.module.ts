@@ -4,8 +4,10 @@ import { ProductsComponent } from './Pages/products/products.component';
 import { ProductDetailsComponent } from './Pages/products/product-details/product-details.component';
 import { SigninComponent } from './Pages/signin/signin.component';
 import { SignupComponent } from './Pages/signup/signup.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent},
   { path: 'register-new-user', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'products', redirectTo: 'products/category/0', pathMatch: 'full' },

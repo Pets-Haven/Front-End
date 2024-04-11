@@ -1,0 +1,247 @@
+/* .banner-product-single-item {
+  position: relative;
+  overflow: hidden; 
+}
+
+.banner-product-single-item .thumb {
+  position: relative;
+}
+
+.banner-product-single-item .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, -50%); 
+  text-align: center;
+  padding: 20px;
+}
+
+.content h5 {
+  color: #721b65;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 5px;
+}
+
+.content a {
+  margin-top: 20px;
+}
+.banner-product-single-item .thumb {
+  position: relative;
+  overflow: hidden;
+}
+ */
+
+.banner-product-single-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+.banner-product-single-item .thumb {
+  overflow: hidden;
+  position: relative;
+}
+.banner-product-single-item .thumb img {
+  min-height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+@media only screen and (max-width: 1199px) {
+  .banner-product-single-item .thumb img {
+    min-height: 240px;
+  }
+}
+.banner-product-single-item .content {
+  left: calc(50% + 42px);
+  margin-top: -4px;
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  transform: translate(0px, -50%);
+  -webkit-transform: translate(0px, -50%);
+  -moz-transform: translate(0px, -50%);
+  -ms-transform: translate(0px, -50%);
+  -o-transform: translate(0px, -50%);
+}
+@media only screen and (max-width: 991px) {
+  .banner-product-single-item .content {
+    left: calc(50% + 16px);
+  }
+}
+@media only screen and (max-width: 767px) {
+  .banner-product-single-item .content {
+    left: calc(50% + 85px);
+  }
+}
+@media only screen and (max-width: 575px) {
+  .banner-product-single-item .content {
+    left: auto;
+    right: 18px;
+  }
+}
+.banner-product-single-item .content .sub-title {
+  color: #721b65;
+  font-size: 24px;
+  line-height: 1;
+  margin-bottom: 11px;
+}
+@media only screen and (max-width: 1199px) {
+  .banner-product-single-item .content .sub-title {
+    font-size: 18px;
+  }
+}
+.banner-product-single-item .content .title {
+  color: #721b65;
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 26px;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 1199px) {
+  .banner-product-single-item .content .title {
+    font-size: 27px;
+    margin-bottom: 16px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .banner-product-single-item .content .title {
+    font-size: 25px;
+  }
+}
+.banner-product-single-item .content .btn-theme {
+  pointer-events: visible;
+}
+.banner-product-single-item:hover .thumb img {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+
+.banner-product-single-style2-item {
+  margin-bottom: 40px;
+  position: relative;
+}
+.banner-product-single-style2-item .thumb {
+  overflow: hidden;
+  position: relative;
+}
+.banner-product-single-style2-item .thumb img {
+  min-height: 247px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.banner-product-single-style2-item .content {
+  left: 49px;
+  margin-top: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0px, -50%);
+  -webkit-transform: translate(0px, -50%);
+  -moz-transform: translate(0px, -50%);
+  -ms-transform: translate(0px, -50%);
+  -o-transform: translate(0px, -50%);
+}
+.banner-product-single-style2-item .content .sub-title {
+  color: #721b65;
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 11px;
+}
+.banner-product-single-style2-item .content .title {
+  color: #721b65;
+  font-size: 24px;
+  line-height: 1.292;
+  margin-bottom: 28px;
+  max-width: 200px;
+  text-transform: capitalize;
+}
+.banner-product-single-style2-item .content .btn-theme {
+  pointer-events: visible;
+}
+.banner-product-single-style2-item:hover .thumb img {
+  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+}
+
+.banner-product-single-style3-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+.banner-product-single-style3-item .thumb {
+  overflow: hidden;
+  position: relative;
+}
+.banner-product-single-style3-item .thumb img {
+  min-height: 247px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+.banner-product-single-style3-item .content {
+  left: 30px;
+  margin-top: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0px, -50%);
+  -webkit-transform: translate(0px, -50%);
+  -moz-transform: translate(0px, -50%);
+  -ms-transform: translate(0px, -50%);
+  -o-transform: translate(0px, -50%);
+}
+.banner-product-single-style3-item .content .sub-title {
+  color: #721b65;
+  font-size: 18px;
+  line-height: 1;
+  margin-bottom: 11px;
+}
+@media only screen and (max-width: 1199px) {
+  .banner-product-single-style3-item .content .sub-title {
+    font-size: 16px;
+  }
+}
+.banner-product-single-style3-item .content .title {
+  color: #721b65;
+  font-size: 24px;
+  line-height: 1.292;
+  margin-bottom: 28px;
+  max-width: 170px;
+  text-transform: capitalize;
+}
+@media only screen and (max-width: 1199px) {
+  .banner-product-single-style3-item .content .title {
+    font-size: 20px;
+    max-width: 130px;
+  }
+}
+.banner-product-single-style3-item .content .btn-theme {
+  pointer-events: visible;
+}
+.banner-product-single-style3-item:hover .thumb img {
+  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+}
