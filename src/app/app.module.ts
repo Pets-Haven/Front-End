@@ -34,6 +34,7 @@ import { BannerComponent } from './home/banner/banner.component';
 import { NewCollectionComponent } from './home/new-collection/new-collection.component';
 import { Cover2Component } from './home/cover2/cover2.component';
 import { AboutAreaComponent } from './home/about-area/about-area.component';
+import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
 
 
 @NgModule({
@@ -65,6 +66,7 @@ import { AboutAreaComponent } from './home/about-area/about-area.component';
     NewCollectionComponent,
     Cover2Component,
     AboutAreaComponent,
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
