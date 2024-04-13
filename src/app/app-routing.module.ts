@@ -6,9 +6,12 @@ import { SigninComponent } from './Pages/signin/signin.component';
 import { SignupComponent } from './Pages/signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
+import { NotFoundComponent } from './Pages/not-found/not-found.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'register-new-user', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'products', redirectTo: 'products/category/0', pathMatch: 'full' },
@@ -17,6 +20,8 @@ const routes: Routes = [
   {path:'products/category/:categoryid',component:ProductsComponent},
   {path:'products/search/:searchvalue',component:ProductsComponent},
   { path: 'contact-us', component: ContactUsComponent },
+  { path: '**', component: NotFoundComponent } 
+
 ];
 
 @NgModule({

@@ -35,6 +35,7 @@ import { NewCollectionComponent } from './home/new-collection/new-collection.com
 import { Cover2Component } from './home/cover2/cover2.component';
 import { AboutAreaComponent } from './home/about-area/about-area.component';
 import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
+import { NotFoundComponent } from './Pages/not-found/not-found.component';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
     Cover2Component,
     AboutAreaComponent,
     ContactUsComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+h1{
+  color: #721b65;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.not-found-message a{
+font-weight: bold;
+color: black;
+
+}
+
+.not-found-message a:hover {
+  color: #721b65;
+}
+  
