@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RegisterUser } from '../interfaces/registerUser';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ export class UsersService {
 
   constructor(public http: HttpClient) { }
 
-  signUpUser(user: any) {
+  signUpUser(user: RegisterUser) {
     return this.http.post(this.baseUrl + "register", user);
   }
 

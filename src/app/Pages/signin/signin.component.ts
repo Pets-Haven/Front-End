@@ -24,8 +24,15 @@ export class SigninComponent {
   handleLogin(data: any) {
     data.preventDefault();
     if (this.userLoginForm.valid) {
-      this.userService.loginUser(this.userLoginForm.value).subscribe((response: any) => {
-        console.log(jwtDecode(response.token));
+      this.userService.loginUser(this.userLoginForm.value).subscribe({
+        next: (response:any) => {
+          localStorage.setItem('token', response.token);
+          const decodedToken: any = jwtDecode(response.token);
+          // this.userService.user = decodedToken;
+        },
+        error: (error) => {
+          console.log(error);
+        }
       });
     }
   };

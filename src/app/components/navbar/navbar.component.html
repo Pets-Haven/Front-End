@@ -30,10 +30,10 @@
                     <li>
                       <a href="account.html"><span>Account</span></a>
                     </li>
-                    <li>
+                    <li *ngIf="isLogin">
                       <a routerLink="/signin"><span>Login</span></a>
                     </li>
-                    <li>
+                    <li *ngIf="isLogin">
                       <a href="account-register.html"><span>Register</span></a>
                     </li>
                   </ul>
@@ -58,10 +58,16 @@
                 </button>
               </div>
               <div class="shopping-account mt-3">
-                <a class="shopping-account-btn" routerLink="/signin">
+                <a class="shopping-account-btn" *ngIf="isLogin" routerLink="/signin">
                   <i class="bi bi-people"></i>
                 </a>
               </div>
+              <div class="shopping-account mt-3">
+                <a class="shopping-account-btn" *ngIf="!isLogin" routerLink="/profile">
+                  <i class="bi bi-people"></i>
+                </a>
+              </div>
+
               <div class="shopping-wishlist mt-3">
                 <a class="shopping-wishlist-btn" href="shop-wishlist.html">
                   <i class="bi bi-heart"></i>

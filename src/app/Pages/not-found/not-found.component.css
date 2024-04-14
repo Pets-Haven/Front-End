@@ -15,3 +15,6 @@ color: black;
   color: #721b65;
 }
   
+.notfound-page{
+  min-height: 75vh !important;
+}

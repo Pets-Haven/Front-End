@@ -7,6 +7,7 @@
           <!-- (submit)="registerAccount($event)" -->
 
           <form
+            (submit)="registerAccount($event)"
             [formGroup]="userAccountForm"
           >
             <div class="row">
@@ -94,6 +95,14 @@
                     >
                       Invalid email format.
                     </div>
+                    <div
+                    *ngIf="getEmail.hasError('emailTaken')"
+                    id="emailHelp"
+                    class="form-text text-danger text-capitalize"
+                  >
+                    Email is Already Registered.
+                  </div>
+
                   </ng-container>
                 </div>
               </div>
@@ -131,6 +140,14 @@
                       Username not valid, You Can Use Only Letters, Numbers,
                       Dashes and Underscores.
                     </div>
+                    <div
+                    *ngIf="getUsername.hasError('userNameTaken')"
+                    id="emailHelp"
+                    class="form-text text-danger text-capitalize"
+                  >
+                    User Name is Already Taken.
+                  </div>
+
                   </ng-container>
                 </div>
               </div>

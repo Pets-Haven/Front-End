@@ -36,6 +36,7 @@ import { Cover2Component } from './home/cover2/cover2.component';
 import { AboutAreaComponent } from './home/about-area/about-area.component';
 import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
 import { NotFoundComponent } from './Pages/not-found/not-found.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { NotFoundComponent } from './Pages/not-found/not-found.component';
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
