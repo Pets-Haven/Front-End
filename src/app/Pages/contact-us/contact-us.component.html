@@ -1,172 +1,165 @@
-<main class="main-content">
-  <!-- <div class="page-header-area" style="background-image: url('assets/Images/bg1.webp'); background-size: cover; background-position: center; height: 370px;">
-    <div class="container pt--0 pb--0">
-      <div class="row">
-        <div class="col-12">
-          <div class="page-header-content">
-            <h2 class="title">Contact Us</h2>
-            <nav class="breadcrumb-area">
-              <ul class="breadcrumb">
-                <li><a href="/"><strong>Home</strong></a></li>
-                <li><strong> // </strong></li>
-                <li><a href="contact-us.html"><strong>Contact Us</strong></a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-<app-page-header-area [mainText]="'Contact Us'"></app-page-header-area>
-
-  <section class="contact-area contact-inner-area">
-    <div class="container">
-      <div class="row contact-page-wrapper">
-        <div class="col-xl-5">
-          <h4 class="contact-page-title">We Are Here! <br> <br> Please Contact Us.</h4>
-          <div class="contact-info-wrap">
-            <div class="contact-info">
-              <div class="row">
-                <div class="col-12">
-                  <div class="info-item">
-                    <div class="icon">
-                      <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="info">
-                      <br>
-                      <h4 class="title"><strong>Address:</strong></h4>
-                      <p>123, Main Street, ITI-EGYPT | BANHA BRANCH</p>
-                    </div>
+<app-page-header-area mainText="Contact Us"></app-page-header-area>
+<section class="contact-area contact-inner-area">
+  <div class="container">
+    <div class="row contact-page-wrapper">
+      <div class="col-xl-5">
+        <h4 class="contact-page-title">
+          We Are Here! <br />Please Contact Us.
+        </h4>
+        <div class="contact-info-wrap">
+          <div class="contact-info">
+            <div class="row">
+              <div class="col-12 col-lg-6 col-xl-12">
+                <div class="info-item">
+                  <div class="icon">
+                    <img src="assets/Icons/c1.webp" alt="Image-HasTech" />
+                  </div>
+                  <div class="info">
+                    <h5 class="title">Address:</h5>
+                    <p>ITI-EGYPT | BANHA BRANCH</p>
                   </div>
                 </div>
-                <div class="col-12">
-                  <div class="info-item">
-                    <div class="icon">
-                      <i class="fas fa-phone-alt"></i>
-                    </div>
-                    <div class="info">
-                      <h4 class="title"><strong>Phone:</strong></h4>
-                      <p><a href="tel://+20123456789">+20 123 456 789</a></p>
-                    </div>
+              </div>
+              <div class="col-12 col-lg-6 col-xl-12">
+                <div class="info-item">
+                  <div class="icon">
+                    <img src="assets/Icons/c2.webp" alt="Image-HasTech" />
+                  </div>
+                  <div class="info">
+                    <h5 class="title">Phone:</h5>
+                    <p>
+                      <a href="tel://+201153285919">+20 115 328 5919</a><br />
+                    </p>
                   </div>
                 </div>
-                <div class="col-12">
-                  <div class="info-item">
-                    <div class="icon">
-                      <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="info">
-                      <h4 class="title"><strong>Email:</strong></h4>
-                      <p><a href="mailto://demo@example.com">ITI&#64;gmail.com</a></p>
-                    </div>
+              </div>
+              <div class="col-12 col-lg-6 col-xl-12">
+                <div class="info-item">
+                  <div class="icon">
+                    <img src="assets/Icons/c3.webp" alt="Image-HasTech" />
+                  </div>
+                  <div class="info">
+                    <h5 class="title">Email:</h5>
+                    <p>
+                      <a href="mailto://demo@example.com">ITI@gmail.com</a
+                      ><br />
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-xl-7">
-          <h4 class="contact-page-title page-title-style2">Send A Query</h4>
-          <div class="contact-form-wrap">
-            <div class="contact-form">
-              <form id="contact-form" (ngSubmit)="onSubmit()" [formGroup]="contactUsForm" novalidate>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input class="form-control" type="text" formControlName="name" placeholder="Name *">
-                      <div *ngIf="nameControl?.errors && (nameControl?.dirty || nameControl?.touched)">
-                        <small class="text-danger" *ngIf="nameControl?.errors?.['required']">Name is required</small>
-                        <small class="text-danger" *ngIf="nameControl?.errors?.['minlength']">Name should be at least 3 characters long</small>
+      </div>
+      <div class="col-xl-7">
+        <h4 class="contact-page-title page-title-style2">Send A Quest</h4>
+        <div class="contact-form-wrap">
+          <div class="contact-form">
+            <form
+              id="contact-form"
+              action="https://whizthemes.com/mail-php/raju/arden/mail.php"
+              method="POST"
+              [formGroup]="ContactForm"
+              (submit)="onSubmit($event)"
+            >
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      type="text"
+                      name="con_name"
+                      placeholder="Name *"
+                      formControlName="name"
+                    />
+                    <ng-container *ngIf="getName.dirty">
+                      <div
+                        *ngIf="getName.hasError('required')"
+                        class="form-text text-danger text-capitalize"
+                      >
+                        Name is required.
                       </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input class="form-control" type="email" formControlName="email" placeholder="Email *">
-                      <div *ngIf="emailControl?.errors && (emailControl?.dirty || emailControl?.touched)">
-                        <small class="text-danger" *ngIf="emailControl?.errors?.['required']">Email is required</small>
-                        <small class="text-danger" *ngIf="emailControl?.errors?.['email']">Invalid email format</small>
+                      <div
+                        *ngIf="getName.hasError('minlength')"
+                        class="form-text text-danger text-capitalize"
+                      >
+                        Name must be more than 3 words.
                       </div>
-                    </div>
+                    </ng-container>
                   </div>
                 </div>
-
-
-                <div class="row">
-                  <div class="col-12">
-                    <div class="form-group">
-                      <input class="form-control" type="text" formControlName="subject" placeholder="Subject (Optional)">
-                      <div *ngIf="subjectControl?.errors && (subjectControl?.dirty || subjectControl?.touched)">
-                        <small class="text-danger" *ngIf="subjectControl?.errors?.['maxlength']">Subject should not exceed 50 characters</small>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      type="email"
+                      name="con_email"
+                      placeholder="Email *"
+                      formControlName="email"
+                    />
+                    <ng-container *ngIf="getEmail.dirty">
+                      <div
+                        *ngIf="getEmail.hasError('required')"
+                        class="form-text text-danger text-capitalize"
+                      >
+                        Email is required.
                       </div>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-group">
-                      <textarea class="form-control" rows="6" formControlName="message" placeholder="Message *"></textarea>
-                      <div *ngIf="messageControl?.errors && (messageControl?.dirty || messageControl?.touched)">
-                        <small class="text-danger" *ngIf="messageControl?.errors?.['required']">Message is required</small>
-                        <small class="text-danger" *ngIf="messageControl?.errors?.['minlength']">Message should be at least 10 characters long</small>
+                      <div
+                        *ngIf="getEmail.hasError('email')"
+                        class="form-text text-danger text-capitalize"
+                      >
+                        Email Not valid.
                       </div>
-                    </div>
+                    </ng-container>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-12">
-                    <div class="form-group mb--0">
-                      <!--  <button class="btn btn-theme" type="submit" [disabled]="!contactUsForm.valid">Send Message</button>-->
-                      <button class="btn btn-primary btn-lg" type="submit" (click)="sendMessage()" style="background-color: rgb(233, 197, 16);">Send Message</button>
-                      <p class="thank-you-message" [class.show]="showThankYouMessage"><br> <br> Thank you for contacting us! We will be back to you at Pets Heaven, where all your pet services are in one place.</p>
-                    </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <input
+                      class="form-control"
+                      type="text"
+                      placeholder="Subject (Optinal)"
+                    />
                   </div>
                 </div>
-              </form>
-            </div>
+                <div class="col-12">
+                  <div class="form-group mb--0">
+                    <textarea
+                      class="form-control"
+                      name="con_message"
+                      placeholder="Message"
+                      formControlName="message"
+                    ></textarea>
+                    <ng-container *ngIf="getMessage.dirty">
+                      <div
+                        *ngIf="getMessage.hasError('required')"
+                        class="form-text text-danger text-capitalize"
+                      >
+                        Message is required.
+                      </div>
+                      <div
+                        *ngIf="getMessage.hasError('minlength')"
+                        class="form-text text-danger text-capitalize"
+                      >
+                        Message must be more than 3 words.
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group mb--0">
+                    <button class="btn-theme" type="submit">
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
+          <div class="form-message"></div>
         </div>
       </div>
     </div>
-  </section>
-</main>
-
-<script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/6617ec72a0c6737bd12ac44e/1hr6n7875';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-</script>
-
-
-<!--<script src="https://formcarry.com/script/v1.js"></script>-->
-
-
-<!-- book-meeting.component.html -->
-<section id="meeting" class="meeting">
-  <div class="container">
-
-    <div class="section-title" data-aos="fade-up">
-      <h2>Book a Meeting in Pet Heaven</h2>
-      <small>Meeting would be related to:</small>
-      <ul>
-        <li>Pet Consultation</li>
-        <li>Animal Welfare & Care</li>
-        <li>Pet Psychology</li>
-        <li>Business Meeting</li>
-        <li>Interviews</li>
-        <li>Technical Support for Pets</li>
-        <li>Training for Pet Owners</li>
-      </ul>
-    </div>
-
-    <div class="row">
-      <!-- Calendly inline widget begin -->
-      <a href="https://calendly.com/petheaven669">Book Now!</a>
-      <!-- Calendly inline widget end -->
-    </div>
   </div>
 </section>
+<app-feature-area></app-feature-area>

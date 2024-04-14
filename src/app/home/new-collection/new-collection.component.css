@@ -1,26 +1,16 @@
 .section-title {
-  position: relative; 
-  padding: 20px; 
-  overflow: hidden; 
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
 }
 
-.section-title::before {
-  position: absolute;
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100vh; 
-  content:url(../../../assets/Images/sec.webp); 
-  opacity: 0.5;
-  z-index: -1; 
-}
-.section-title h5{
+.section-title h5 {
   color: #721b65;
   font-size: 20px;
   font-weight: 300;
   text-transform: uppercase;
 }
-.section-title h2{
+.section-title h2 {
   color: #292929;
   font-size: 46px;
   font-weight: 450;
@@ -29,5 +19,94 @@
   text-align: center;
 }
 .section-title::before {
-  filter: brightness(80%); 
+  filter: brightness(80%);
+}
+.isotope-filter {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+@media only screen and (max-width: 1199px) {
+  .isotope-filter {
+    margin-bottom: 32px;
+  }
+}
+@media only screen and (max-width: 479.98px) {
+  .isotope-filter {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+.isotope-filter button {
+  border-radius: 50px;
+  border: 2px dashed transparent;
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  text-transform: uppercase;
+  display: inline-block;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  margin: 0 2px;
+  padding: 8px 19px 7px;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+@media only screen and (max-width: 991px) {
+  .isotope-filter button {
+    font-size: 13px;
+    margin: 0;
+    padding: 6px 18px 5px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .isotope-filter button {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 479.98px) {
+  .isotope-filter button {
+    border: 2px dashed #eee;
+    display: block;
+    margin: 0 3px 10px;
+    width: 47.77%;
+  }
+}
+.isotope-filter button.active {
+  border-color: #721b65;
+}
+.isotope-filter button:hover {
+  color: #721b65;
+}
+@media only screen and (max-width: 767px) {
+  .isotope-filter-style2 {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .isotope-filter-style2 button {
+    font-size: 12px;
+    border: 2px dashed #eee;
+    display: block;
+    margin: 0 3px 10px;
+    width: 47.77%;
+  }
 }

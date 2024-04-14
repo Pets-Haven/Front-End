@@ -1,24 +1,25 @@
 <section class="product-area product-default-area">
   <div class="container pt--0">
-    <div class="row justify-content-center"> 
+    <div class="row justify-content-center">
       <div class="col-12">
         <div class="section-title mb-3 mb-sm-20 shape-center text-center">
           <h5 class="sub-title">Best PRODUCT</h5>
           <h2 class="title">New Collection</h2>
         </div>
-        <div class="isotope-filter text-center mb-3">
-          <button class="active" data-filter="*" fdprocessedid="3nv0w">All</button>
-          <button data-filter=".filter_new" fdprocessedid="36rc8v" class="">New</button>
-          <button data-filter=".filter_best_sellers" fdprocessedid="79yibm" class="">Best Sellers</button>
-          <button data-filter=".filter_featured" fdprocessedid="vei41q" class="">Featured</button>
-          <button data-filter=".filter_on_sall" fdprocessedid="oqkdvi" class="">On Sall</button>
+        <div class="isotope-filter">
+          <button class="active" data-filter="*">All</button>
+          <button data-filter=".filter_new">New</button>
+          <button data-filter=".filter_best_sellers">Best Sellers</button>
         </div>
       </div>
     </div>
-    <div class="row justify-content-center"> 
+    <div class="row justify-content-center">
       <div class="col-lg-9 col-sm-12">
         <div class="row">
-          <div class="col-lg-3 col-md-6 mb-30" *ngFor="let product of relatedProducts.slice(0, 8)">
+          <div
+            class="col-lg-3 col-md-6 mb-30"
+            *ngFor="let product of relatedProducts.slice(0, 8)"
+          >
             <app-card-column [product]="product"></app-card-column>
           </div>
         </div>

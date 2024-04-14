@@ -1,33 +1,35 @@
 .section-title {
-  position: relative; 
-  padding: 20px; 
-  overflow: hidden; 
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
 }
 
 .section-title::before {
   position: absolute;
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100vh; 
-  content:url(../../../../../assets/Images/sec.webp); 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  content: url(../../../../../assets/Images/sec.webp);
   opacity: 0.5;
-  z-index: -1; 
+  z-index: -1;
 }
 
-.section-title h5{
+.section-title h5 {
   color: #721b65;
   font-size: 20px;
   font-weight: 300;
   text-transform: uppercase;
+  z-index: 1;
 }
-.section-title h2{
+.section-title h2 {
   color: #292929;
   font-size: 46px;
   font-weight: 450;
   line-height: 1;
   margin-bottom: 30px;
   text-align: center;
+  z-index: 1;
 }
 .section-title::before {
   filter: brightness(80%); /* Adjust brightness to change color */

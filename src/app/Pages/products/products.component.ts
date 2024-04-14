@@ -16,33 +16,29 @@ export class ProductsComponent {
   itemsPerPage: number = 6;
   showCardWithoutContent: boolean = false;
 
-  constructor(public service: ProductsService,public route: ActivatedRoute) {
-
-  }
+  constructor(public service: ProductsService, public route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-     let urlstring:any;
-   if(params['searchvalue']){
-     urlstring=params['searchvalue'];
-     this.service.SearchProducts(urlstring).subscribe((data:any) => {
-       this.products = data;
-     })
-
-   }
-   else if(params['categoryid']){
-     urlstring=params['categoryid'];
-     this.service.filterProductsbycategory(urlstring).subscribe((data:any) => {
-      this.products = data;
-      
+    this.route.params.subscribe((params) => {
+      let urlstring: any;
+      if (params['searchvalue']) {
+        urlstring = params['searchvalue'];
+        this.service.SearchProducts(urlstring).subscribe((data: any) => {
+          this.products = data;
+        });
+      } else if (params['categoryid']) {
+        urlstring = params['categoryid'];
+        this.service
+          .filterProductsbycategory(urlstring)
+          .subscribe((data: any) => {
+            this.products = data;
+          });
+      } else {
+        this.service.getAllProducts().subscribe((data: any) => {
+          this.products = data;
+        });
+      }
     });
-   }
-       
-      
-    
-
-    });
-    
   }
 
   toggleCardType(flag: boolean) {
@@ -59,8 +55,6 @@ export class ProductsComponent {
     }
   }
 
-  
-  
   getCurrentPageProducts(): product[] {
     if (this.products && this.products.length > 0) {
       const startIndex = (this.currentPage - 1) * this.itemsPerPage;
