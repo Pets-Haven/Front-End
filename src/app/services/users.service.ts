@@ -6,14 +6,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsersService {
-  baseUrl: string = "http://localhost:3000/users";
+  baseUrl: string = "http://localhost:5031/api/Account/";
 
   constructor(public http: HttpClient) { }
 
-  addUser(user: any) {
-    return this.http.post(this.baseUrl, user);
+  signUpUser(user: any) {
+    return this.http.post(this.baseUrl + "register", user);
   }
-  getUserByEmail(email: string) {
-    return this.http.get(`${this.baseUrl}?email=${email}`);
-  };
+
+  loginUser(user: any) {
+    return this.http.post(this.baseUrl + "login", user);
+  }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { jwtDecode } from 'jwt-decode';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -23,23 +24,9 @@ export class SigninComponent {
   handleLogin(data: any) {
     data.preventDefault();
     if (this.userLoginForm.valid) {
-      this.userService.getUserByEmail(this.userLoginForm.controls['email'].value!).subscribe({
-        next: (response: any) => {
-          if (response.length > 0) {
-            if (response[0].password === this.userLoginForm.controls['password'].value) {
-              console.log("Login Successful");
-            } else {
-              this.userLoginForm.controls['password'].setErrors({invalidPassword: true});
-            }
-          }else{
-            this.userLoginForm.controls['email'].setErrors({invalidEmail: true});
-          }
-        },
-        error: (error: any) => {
-          console.log(error);
-        }
-      })
-
+      this.userService.loginUser(this.userLoginForm.value).subscribe((response: any) => {
+        console.log(jwtDecode(response.token));
+      });
     }
   };
 }

@@ -73,22 +73,22 @@ export class SignupComponent {
     }
   }
 
-  registerAccount(formDetails: any) {
-    formDetails.preventDefault();
-    if (this.userAccountForm.valid) {
-      this.userServices.addUser(this.userAccountForm.value).subscribe({
-        next: data => {
-          console.log(data);
-        }
-      })
-    } else {
-      this.userAccountForm.controls.fName.markAsDirty();
-      this.userAccountForm.controls.lName.markAsDirty();
-      this.userAccountForm.controls.email.markAsDirty();
-      this.userAccountForm.controls.username.markAsDirty();
-      this.userAccountForm.controls.password.markAsDirty();
-      this.userAccountForm.controls.repassword.markAsDirty();
-    }
-  }
+  // registerAccount(formDetails: any) {
+  //   formDetails.preventDefault();
+  //   if (this.userAccountForm.valid) {
+  //     this.userServices.addUser(this.userAccountForm.value).subscribe({
+  //       next: data => {
+  //         console.log(data);
+  //       }
+  //     })
+  //   } else {
+  //     this.userAccountForm.controls.fName.markAsDirty();
+  //     this.userAccountForm.controls.lName.markAsDirty();
+  //     this.userAccountForm.controls.email.markAsDirty();
+  //     this.userAccountForm.controls.username.markAsDirty();
+  //     this.userAccountForm.controls.password.markAsDirty();
+  //     this.userAccountForm.controls.repassword.markAsDirty();
+  //   }
+  // }
 
 }
