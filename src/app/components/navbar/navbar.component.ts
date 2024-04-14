@@ -7,15 +7,15 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 
-  isLogin: boolean = false;
+  isLogin: boolean = true;
 
   
   constructor() { }
-  isLogged() {
-    if (localStorage.getItem('_petsToken')) {
-      this.isLogin = true;
-    } else {
-      this.isLogin = false;
-    }
-  }
+  // isLogged() {
+  //   if (localStorage.getItem('_petsToken')) {
+  //     this.isLogin = true;
+  //   } else {
+  //     this.isLogin = false;
+  //   }
+  // }
 }
