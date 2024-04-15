@@ -11,16 +11,16 @@ export class CartService {
 
 
   getCart( userId:string) {
-    return this.http.get(`this.baseUrl?userId=${userId}`);
+    return this.http.get(`${this.baseUrl}?userId=${userId}`);
   }
   addToCart(userId:string,product:any){
 
-    return this.http.post(`this.baseUrl?userId=${userId}`,product);
+    return this.http.post(`${this.baseUrl}?userId=${userId}`,product);
   }
   removeFromCart(userId:string,productId:number){
-    return this.http.delete(`this.baseUrl?userId=${userId}&productId=${productId}`);
+    return this.http.delete(`${this.baseUrl}?userId=${userId}&productId=${productId}`);
   }
   editCart(userId:string,product:any){
-    return this.http.put(`this.baseUrl?userId=${userId}`,product);
+    return this.http.put(`${this.baseUrl}?userId=${userId}`,product);
   }
 }

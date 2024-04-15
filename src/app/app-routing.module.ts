@@ -7,6 +7,7 @@ import { SignupComponent } from './Pages/signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
 import { NotFoundComponent } from './Pages/not-found/not-found.component';
+import { CartComponent } from './Pages/cart/cart.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'contact-us', component: ContactUsComponent },
+  {path:'Cart',component:CartComponent},
   { path: '**', component: NotFoundComponent },
 ];
 

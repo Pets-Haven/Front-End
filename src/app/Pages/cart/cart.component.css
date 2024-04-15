@@ -160,3 +160,6 @@
   background-color: #ebe9eb;
   border-color: #e5e5e5;
 }
+.remove{
+  cursor: pointer;
+}
