@@ -5,13 +5,14 @@ import { MatDialog } from '@angular/material/dialog';
 import { WishlistPopUpComponent } from '../POPUPS/wishlist-pop-up/wishlist-pop-up.component';
 import { CartPopUpComponent } from '../POPUPS/cart-pop-up/cart-pop-up.component';
 import { DetailsPopUpComponent } from '../POPUPS/details-pop-up/details-pop-up.component';
+import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-card-row',
   templateUrl: './card-row.component.html',
   styleUrls: ['./card-row.component.css'],
 })
 export class CardRowComponent {
-  constructor(private dialogRef: MatDialog) {}
+  constructor(private dialogRef: MatDialog,public cart:CartService) {}
   @Input() product: product = {
     id: 0,
     name: '',
@@ -37,5 +38,8 @@ export class CardRowComponent {
     this.dialogRef.open(CartPopUpComponent, {
       data: this.product,
     });
+    let addedproduct={productId:this.product.id,cartQuantity:1};
+    this.cart.addToCart("caa92dc2-3254-4b01-8dc7-0a7d71678497",addedproduct).subscribe();
+    console.log(addedproduct);
   }
 }

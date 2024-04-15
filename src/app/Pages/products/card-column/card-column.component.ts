@@ -4,6 +4,7 @@ import { WishlistPopUpComponent } from '../POPUPS/wishlist-pop-up/wishlist-pop-u
 import { CartPopUpComponent } from '../POPUPS/cart-pop-up/cart-pop-up.component';
 import { DetailsPopUpComponent } from '../POPUPS/details-pop-up/details-pop-up.component';
 import { product } from 'src/app/services/product';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-card-column',
@@ -11,7 +12,7 @@ import { product } from 'src/app/services/product';
   styleUrls: ['./card-column.component.css'],
 })
 export class CardColumnComponent {
-  constructor(private dialogRef: MatDialog) {}
+  constructor(private dialogRef: MatDialog,public cart:CartService) {}
   @Input() product: any;
 
   addtowhishlist(): void {
@@ -23,10 +24,14 @@ export class CardColumnComponent {
     this.dialogRef.open(CartPopUpComponent, {
       data: this.product,
     });
+    let addedproduct={productId:this.product.id,cartQuantity:1};
+    this.cart.addToCart("caa92dc2-3254-4b01-8dc7-0a7d71678497",addedproduct).subscribe();
+    console.log(addedproduct);
   }
   details(): void {
     this.dialogRef.open(DetailsPopUpComponent, {
       data: this.product,
     });
+
   }
 }
