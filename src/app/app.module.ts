@@ -37,6 +37,8 @@ import { AboutAreaComponent } from './home/about-area/about-area.component';
 import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
 import { NotFoundComponent } from './Pages/not-found/not-found.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CartComponent } from './Pages/cart/cart.component';
+import { CheckOutComponent } from './Pages/cart/check-out/check-out.component';
 
 
 @NgModule({
@@ -70,6 +72,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AboutAreaComponent,
     ContactUsComponent,
     NotFoundComponent,
+    CartComponent,
+    CheckOutComponent,
   ],
   imports: [
     BrowserModule,
