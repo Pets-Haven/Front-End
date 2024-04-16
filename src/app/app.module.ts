@@ -39,6 +39,7 @@ import { NotFoundComponent } from './Pages/not-found/not-found.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CartComponent } from './Pages/cart/cart.component';
 import { CheckOutComponent } from './Pages/cart/check-out/check-out.component';
+import { WhishlistComponent } from './Pages/whishlist/whishlist.component';
 
 
 @NgModule({
@@ -74,6 +75,7 @@ import { CheckOutComponent } from './Pages/cart/check-out/check-out.component';
     NotFoundComponent,
     CartComponent,
     CheckOutComponent,
+    WhishlistComponent,
   ],
   imports: [
     BrowserModule,

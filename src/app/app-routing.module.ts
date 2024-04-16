@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
 import { NotFoundComponent } from './Pages/not-found/not-found.component';
 import { CartComponent } from './Pages/cart/cart.component';
+import { WhishlistComponent } from './Pages/whishlist/whishlist.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   },
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'whishlist', component: WhishlistComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

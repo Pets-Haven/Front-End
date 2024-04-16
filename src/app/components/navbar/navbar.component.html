@@ -58,18 +58,25 @@
                 </button>
               </div>
               <div class="shopping-account mt-3">
-                <a class="shopping-account-btn" *ngIf="isLogin" routerLink="/signin">
+                <a
+                  class="shopping-account-btn"
+                  *ngIf="isLogin"
+                  routerLink="/signin"
+                >
                   <i class="bi bi-people"></i>
                 </a>
               </div>
               <div class="shopping-account mt-3">
-                <a class="shopping-account-btn" *ngIf="!isLogin" routerLink="/profile">
+                <a
+                  class="shopping-account-btn"
+                  *ngIf="!isLogin"
+                  routerLink="/profile"
+                >
                   <i class="bi bi-people"></i>
                 </a>
               </div>
-
               <div class="shopping-wishlist mt-3">
-                <a class="shopping-wishlist-btn" href="shop-wishlist.html">
+                <a class="shopping-wishlist-btn" routerLink="/whishlist">
                   <i class="bi bi-heart"></i>
                 </a>
               </div>

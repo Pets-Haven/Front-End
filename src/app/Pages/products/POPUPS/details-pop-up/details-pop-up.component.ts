@@ -5,15 +5,17 @@ import { product } from 'src/app/services/product';
 import { WishlistPopUpComponent } from '../wishlist-pop-up/wishlist-pop-up.component';
 import { CartPopUpComponent } from '../cart-pop-up/cart-pop-up.component';
 import { CartService } from 'src/app/services/cart.service';
+import { WishlistService } from 'src/app/services/wishlist.service';
 @Component({
   selector: 'app-details-pop-up',
   templateUrl: './details-pop-up.component.html',
   styleUrls: ['./details-pop-up.component.css'],
 })
 export class DetailsPopUpComponent {
-  userId:string='caa92dc2-3254-4b01-8dc7-0a7d71678497';
+  userId: string = 'caa92dc2-3254-4b01-8dc7-0a7d71678497';
   constructor(
     private dialogRef: MatDialog,
+    public wishlist: WishlistService,
     public cart: CartService,
     @Inject(MAT_DIALOG_DATA)
     public data: {
@@ -21,7 +23,7 @@ export class DetailsPopUpComponent {
       name: '';
       price: 0;
       description: '';
-      qunantity: 0;
+      quantity: 0;
       totalWeight: 0;
       animalType: '';
       type: '';
@@ -30,9 +32,22 @@ export class DetailsPopUpComponent {
   ) {}
   quantityNumber: string = '1';
   quantity: number = Number(this.quantityNumber);
+  changeHandle() {
+    this.quantity = Number(this.quantityNumber);
+
+    if (this.quantity > this.data.quantity) {
+      this.quantity = this.data.quantity;
+      this.quantityNumber = this.quantity.toString();
+    } else if (this.quantity < 1) {
+      this.quantity = 1;
+      this.quantityNumber = this.quantity.toString();
+    }
+  }
   addbutton(): void {
-    this.quantity = this.quantity + 1;
-    this.quantityNumber = this.quantity.toString();
+    if (this.quantity < this.data.quantity) {
+      this.quantity = this.quantity + 1;
+      this.quantityNumber = this.quantity.toString();
+    }
   }
   minusbutton(): void {
     if (this.quantity > 1) {
@@ -41,26 +56,30 @@ export class DetailsPopUpComponent {
     }
   }
   addtocart() {
-    
-    this.cart.isItemExist(this.userId,this.data.id).subscribe({
+    this.cart.isItemExist(this.userId, this.data.id).subscribe({
       next: (data) => {
-        console.log("not found");
+        console.log('not found');
       },
-      error: (err) => { 
+      error: (err) => {
         this.dialogRef.open(CartPopUpComponent, {
           data: this.data,
         });
-        let addedproduct={productId:this.data.id,cartQuantity:this.quantity};
-    
-        this.cart.addToCart(this.userId,addedproduct).subscribe();
+        let addedproduct = {
+          productId: this.data.id,
+          cartQuantity: this.quantity,
+        };
 
-    }});
-   
-    
-  }
-  addtowhishlist() {
-    this.dialogRef.open(WishlistPopUpComponent, {
-      data: this.data,
+        this.cart.addToCart(this.userId, addedproduct).subscribe();
+      },
     });
+  }
+  addtowhishlist(): void {
+    if (this.wishlist.addProductToWishlist(this.data))
+      this.dialogRef.open(WishlistPopUpComponent, {
+        data: this.data,
+      });
+    else {
+      console.log('sobeh will handle this ');
+    }
   }
 }

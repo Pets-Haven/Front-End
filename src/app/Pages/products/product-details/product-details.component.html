@@ -56,11 +56,17 @@
                     <li><span>Weight: </span> {{ product.totalWeight }}</li>
                     <li>
                       <span>Categories: </span>
-                      <a [routerLink]="['/products/category', product.categoryId]" >{{ product.categoryName }}</a>
+                      <a
+                        [routerLink]="[
+                          '/products/category',
+                          product.categoryId
+                        ]"
+                        >{{ product.categoryName }}</a
+                      >
                     </li>
                     <li>
                       <span>For: </span>
-                      <span >{{ product.animalType }}</span>
+                      <span>{{ product.animalType }}</span>
                     </li>
                   </ul>
                 </div>
@@ -70,6 +76,7 @@
                       <input
                         type="text"
                         [(ngModel)]="quantityNumber"
+                        (change)="changeHandle()"
                         title="Quantity"
                         value="01"
                       />

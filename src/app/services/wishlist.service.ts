@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WishlistService {
   private storageKey = 'wishlist';
-  constructor() { }
+  constructor() {}
   getWishlist(): any[] {
     const wishlistJson = localStorage.getItem(this.storageKey);
     return wishlistJson ? JSON.parse(wishlistJson) : [];
@@ -18,15 +18,14 @@ export class WishlistService {
       return true;
     }
     return false;
-    
   }
   saveWishlist(wishlist: any[]): void {
     const wishlistJson = JSON.stringify(wishlist);
     localStorage.setItem(this.storageKey, wishlistJson);
   }
-  removeFromWishlist(itemId: string): void {
+  removeFromWishlist(itemId: number): void {
     let wishlist = this.getWishlist();
-    wishlist = wishlist.filter(item => item.id !== itemId);
+    wishlist = wishlist.filter((item) => item.id !== itemId);
     this.saveWishlist(wishlist);
   }
 }
