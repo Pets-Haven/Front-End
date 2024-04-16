@@ -24,6 +24,7 @@ export class CardRowComponent {
     type: '',
     image: '',
   };
+  userId:string='caa92dc2-3254-4b01-8dc7-0a7d71678497';
   addtowhishlist(): void {
     this.dialogRef.open(WishlistPopUpComponent, {
       data: this.product,
@@ -34,12 +35,26 @@ export class CardRowComponent {
       data: this.product,
     });
   }
-  addtocart() {
-    this.dialogRef.open(CartPopUpComponent, {
-      data: this.product,
-    });
-    let addedproduct={productId:this.product.id,cartQuantity:1};
-    this.cart.addToCart("caa92dc2-3254-4b01-8dc7-0a7d71678497",addedproduct).subscribe();
-    console.log(addedproduct);
+      addtocart() {
+    
+    this.cart.isItemExist(this.userId,this.product.id).subscribe({
+      next: (data) => {
+        console.log("not found");
+      },
+      error: (err) => { 
+        this.dialogRef.open(CartPopUpComponent, {
+          data: this.product,
+        });
+        let addedproduct={productId:this.product.id,cartQuantity:1};
+    
+        this.cart.addToCart(this.userId,addedproduct).subscribe();
+
+    }});
+   
+    
   }
+  
+
 }
+
+

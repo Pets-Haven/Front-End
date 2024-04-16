@@ -6,7 +6,7 @@ import { product } from 'src/app/services/product';
   templateUrl: './cart-pop-up.component.html',
   styleUrls: ['./cart-pop-up.component.css'],
 })
-export class CartPopUpComponent implements OnInit {
+export class CartPopUpComponent  {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
@@ -22,7 +22,5 @@ export class CartPopUpComponent implements OnInit {
     }
   ) {}
 
-  ngOnInit(): void {
-    console.log(this.data);
-  }
+
 }

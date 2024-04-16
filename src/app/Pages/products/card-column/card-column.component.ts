@@ -14,19 +14,30 @@ import { CartService } from 'src/app/services/cart.service';
 export class CardColumnComponent {
   constructor(private dialogRef: MatDialog,public cart:CartService) {}
   @Input() product: any;
+  userId:string='caa92dc2-3254-4b01-8dc7-0a7d71678497';
 
   addtowhishlist(): void {
     this.dialogRef.open(WishlistPopUpComponent, {
       data: this.product,
     });
   }
-  addtocart(): void {
-    this.dialogRef.open(CartPopUpComponent, {
-      data: this.product,
-    });
-    let addedproduct={productId:this.product.id,cartQuantity:1};
-    this.cart.addToCart("caa92dc2-3254-4b01-8dc7-0a7d71678497",addedproduct).subscribe();
-    console.log(addedproduct);
+  addtocart() {
+    
+    this.cart.isItemExist(this.userId,this.product.id).subscribe({
+      next: (data) => {
+        console.log("not found");
+      },
+      error: (err) => { 
+        this.dialogRef.open(CartPopUpComponent, {
+          data: this.product,
+        });
+        let addedproduct={productId:this.product.id,cartQuantity:1};
+    
+        this.cart.addToCart(this.userId,addedproduct).subscribe();
+
+    }});
+   
+    
   }
   details(): void {
     this.dialogRef.open(DetailsPopUpComponent, {

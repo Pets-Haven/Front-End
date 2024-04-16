@@ -11,6 +11,7 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./details-pop-up.component.css'],
 })
 export class DetailsPopUpComponent {
+  userId:string='caa92dc2-3254-4b01-8dc7-0a7d71678497';
   constructor(
     private dialogRef: MatDialog,
     public cart: CartService,
@@ -40,14 +41,22 @@ export class DetailsPopUpComponent {
     }
   }
   addtocart() {
-    this.dialogRef.open(CartPopUpComponent, {
-      data: this.data,
-    });
-    let addedproduct = { productId: this.data.id, cartQuantity: this.quantity };
-    this.cart
-      .addToCart('caa92dc2-3254-4b01-8dc7-0a7d71678497', addedproduct)
-      .subscribe();
-    console.log(addedproduct);
+    
+    this.cart.isItemExist(this.userId,this.data.id).subscribe({
+      next: (data) => {
+        console.log("not found");
+      },
+      error: (err) => { 
+        this.dialogRef.open(CartPopUpComponent, {
+          data: this.data,
+        });
+        let addedproduct={productId:this.data.id,cartQuantity:this.quantity};
+    
+        this.cart.addToCart(this.userId,addedproduct).subscribe();
+
+    }});
+   
+    
   }
   addtowhishlist() {
     this.dialogRef.open(WishlistPopUpComponent, {

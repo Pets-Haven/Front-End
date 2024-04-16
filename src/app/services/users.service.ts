@@ -33,6 +33,7 @@ export class UsersService {
     return (this.loggedinUser.userID === '') ? false : true
   }
 
+
   logoutUser() {
     localStorage.removeItem('_petsToken');
     this.loggedinUser = {

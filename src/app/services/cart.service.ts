@@ -23,4 +23,10 @@ export class CartService {
   editCart(userId:string,product:any){
     return this.http.put(`${this.baseUrl}?userId=${userId}`,product);
   }
+     isItemExist(userId:string,productId:number) {
+    
+     return this.http.get(`${this.baseUrl}/${productId}?userId=${userId}`)
+    
+    }
+    
 }

@@ -13,6 +13,7 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./product-details.component.css'],
 })
 export class ProductDetailsComponent implements OnInit {
+  userId:string='caa92dc2-3254-4b01-8dc7-0a7d71678497';
   constructor(
     public activeroute: ActivatedRoute,
     public dialogRef: MatDialog,
@@ -45,17 +46,22 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
   addtocart() {
-    this.dialogRef.open(CartPopUpComponent, {
-      data: this.product,
-    });
-    let addedproduct = {
-      productId: this.product.id,
-      cartQuantity: this.quantity,
-    };
-    this.cart
-      .addToCart('caa92dc2-3254-4b01-8dc7-0a7d71678497', addedproduct)
-      .subscribe();
-    console.log(addedproduct);
+    
+    this.cart.isItemExist(this.userId,this.product.id).subscribe({
+      next: (data) => {
+        console.log("not found");
+      },
+      error: (err) => { 
+        this.dialogRef.open(CartPopUpComponent, {
+          data: this.product,
+        });
+        let addedproduct={productId:this.product.id,cartQuantity:this.quantity};
+    
+        this.cart.addToCart(this.userId,addedproduct).subscribe();
+
+    }});
+   
+    
   }
   addtowhishlist() {
     this.dialogRef.open(WishlistPopUpComponent, {

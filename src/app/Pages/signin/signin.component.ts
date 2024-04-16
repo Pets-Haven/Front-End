@@ -28,6 +28,7 @@ export class SigninComponent {
     return this.userLoginForm.controls['password'];
   };
   handleLogin(data: any) {
+    
     data.preventDefault();
     if (this.userLoginForm.valid) {
       const loginUser: LoginUser = {
@@ -41,6 +42,7 @@ export class SigninComponent {
           this.userService.loggedinUser = decodedToken;
           console.log(this.userService.isUserLoggedIn());
           
+          
           // this.router.navigate(['/home']);
         },
         error: (error) => {
@@ -50,6 +52,7 @@ export class SigninComponent {
           }
         }
       });
+      
     }
   };
 }

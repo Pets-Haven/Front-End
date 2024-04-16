@@ -11,27 +11,33 @@ import { UsersService } from 'src/app/services/users.service';
 export class CartComponent implements OnInit {
   products: any;
   totalprice: number = 0;
+  userId:string='caa92dc2-3254-4b01-8dc7-0a7d71678497';
   constructor(
     public cart: CartService,
     public userservice: UsersService,
     public route: Router
   ) {}
   ngOnInit(): void {
+   
     this.cart
-      .getCart('bd3ae7bf-8aac-4894-a4e4-505e7e78b5e6')
+      .getCart(this.userId)
       .subscribe((data) => {
         this.products = data;
         this.products.forEach((product: any) => {
           this.totalprice =
             this.totalprice + product.productPrice * product.cartQuantity;
+            
         });
       });
   }
+  /*changeHandle(product: any) {
+    if()
+  }*/
   addbutton(product: any): void {
     if (product.cartQuantity < product.productQuantity) {
       product.cartQuantity = product.cartQuantity + 1;
       this.cart
-        .editCart('bd3ae7bf-8aac-4894-a4e4-505e7e78b5e6', product)
+        .editCart(this.userId, product)
         .subscribe({
           next: (data) => {
             this.totalprice = 0;
@@ -47,7 +53,7 @@ export class CartComponent implements OnInit {
     if (product.cartQuantity > 1) {
       product.cartQuantity = product.cartQuantity - 1;
       this.cart
-        .editCart('bd3ae7bf-8aac-4894-a4e4-505e7e78b5e6', product)
+        .editCart(this.userId, product)
         .subscribe({
           next: (data) => {
             this.totalprice = 0;
@@ -61,20 +67,15 @@ export class CartComponent implements OnInit {
   }
   deleteButton(product: any) {
     this.cart
-      .removeFromCart('bd3ae7bf-8aac-4894-a4e4-505e7e78b5e6', product.productId)
+      .removeFromCart(this.userId, product.productId)
       .subscribe({
         next: (data) => {
-          this.cart
-            .getCart('bd3ae7bf-8aac-4894-a4e4-505e7e78b5e6')
-            .subscribe((data) => {
-              this.products = data;
-            });
+          this.products=this.products.filter((x:any)=>x.productId!=product.productId);
           this.totalprice = 0;
           this.products.forEach((product: any) => {
             this.totalprice =
               this.totalprice + product.productPrice * product.cartQuantity;
           });
-          this.route.navigate(['cart']);
         },
       });
   }
