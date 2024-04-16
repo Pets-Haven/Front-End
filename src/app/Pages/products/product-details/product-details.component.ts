@@ -6,6 +6,7 @@ import { CartPopUpComponent } from '../POPUPS/cart-pop-up/cart-pop-up.component'
 import { WishlistPopUpComponent } from '../POPUPS/wishlist-pop-up/wishlist-pop-up.component';
 import { ProductsService } from 'src/app/services/products.service';
 import { CategoriesService } from 'src/app/services/categories.service';
+import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -16,6 +17,7 @@ export class ProductDetailsComponent implements OnInit {
     public activeroute: ActivatedRoute,
     public dialogRef: MatDialog,
     public productservice: ProductsService,
+    public cart: CartService,
     public categoryService: CategoriesService
   ) {}
   productid: any;
@@ -46,6 +48,14 @@ export class ProductDetailsComponent implements OnInit {
     this.dialogRef.open(CartPopUpComponent, {
       data: this.product,
     });
+    let addedproduct = {
+      productId: this.product.id,
+      cartQuantity: this.quantity,
+    };
+    this.cart
+      .addToCart('caa92dc2-3254-4b01-8dc7-0a7d71678497', addedproduct)
+      .subscribe();
+    console.log(addedproduct);
   }
   addtowhishlist() {
     this.dialogRef.open(WishlistPopUpComponent, {

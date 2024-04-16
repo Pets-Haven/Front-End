@@ -25,7 +25,7 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'contact-us', component: ContactUsComponent },
-  {path:'Cart',component:CartComponent},
+  { path: 'cart', component: CartComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

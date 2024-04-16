@@ -17,13 +17,13 @@
           <tbody>
             <tr class="tbody-item" *ngFor="let product of products">
               <td class="product-remove">
-                <a class="remove" (click)="deleteButton(product)"><i class="bi bi-x-lg"></i></a>
+                <i (click)="deleteButton(product)" class="remove bi bi-x"></i>
               </td>
               <td class="product-thumbnail">
                 <div class="thumb">
                   <a href="single-product.html">
                     <img
-                      src={{product.productImage}}
+                      src="{{ product.productImage }}"
                       width="75"
                       height="75"
                       alt="Image-HasTech"
@@ -32,12 +32,12 @@
                 </div>
               </td>
               <td class="product-name">
-                <a class="title" href="single-product.html"
-                  >{{product.productName}}</a
-                >
+                <a class="title" href="single-product.html">{{
+                  product.productName
+                }}</a>
               </td>
               <td class="product-price">
-                <span class="price">{{product.productPrice}}</span>
+                <span class="price">{{ product.productPrice }}</span>
               </td>
               <td class="product-quantity">
                 <div class="pro-qty">
@@ -48,12 +48,16 @@
                     title="Quantity"
                     value="1"
                   />
-                  <div (click)="minusbutton(product)" class="dec qty-btn">-</div>
+                  <div (click)="minusbutton(product)" class="dec qty-btn">
+                    -
+                  </div>
                   <div (click)="addbutton(product)" class="inc qty-btn">+</div>
                 </div>
               </td>
               <td class="product-subtotal">
-                <span class="price">${{product.productPrice*product.cartQuantity}}</span>
+                <span class="price"
+                  >${{ product.productPrice * product.cartQuantity }}</span
+                >
               </td>
             </tr>
           </tbody>
@@ -61,5 +65,5 @@
       </div>
     </div>
   </div>
-  <app-check-out></app-check-out>
+  <app-check-out [totalprice]="totalprice"></app-check-out>
 </div>

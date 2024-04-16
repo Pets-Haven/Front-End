@@ -4,6 +4,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { product } from 'src/app/services/product';
 import { WishlistPopUpComponent } from '../wishlist-pop-up/wishlist-pop-up.component';
 import { CartPopUpComponent } from '../cart-pop-up/cart-pop-up.component';
+import { CartService } from 'src/app/services/cart.service';
 @Component({
   selector: 'app-details-pop-up',
   templateUrl: './details-pop-up.component.html',
@@ -12,6 +13,7 @@ import { CartPopUpComponent } from '../cart-pop-up/cart-pop-up.component';
 export class DetailsPopUpComponent {
   constructor(
     private dialogRef: MatDialog,
+    public cart: CartService,
     @Inject(MAT_DIALOG_DATA)
     public data: {
       id: 0;
@@ -41,6 +43,11 @@ export class DetailsPopUpComponent {
     this.dialogRef.open(CartPopUpComponent, {
       data: this.data,
     });
+    let addedproduct = { productId: this.data.id, cartQuantity: this.quantity };
+    this.cart
+      .addToCart('caa92dc2-3254-4b01-8dc7-0a7d71678497', addedproduct)
+      .subscribe();
+    console.log(addedproduct);
   }
   addtowhishlist() {
     this.dialogRef.open(WishlistPopUpComponent, {
