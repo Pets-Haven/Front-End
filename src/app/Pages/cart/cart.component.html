@@ -42,6 +42,7 @@
               <td class="product-quantity">
                 <div class="pro-qty">
                   <input
+                    (change)="changeHandle(product)"
                     [(ngModel)]="product.cartQuantity"
                     type="text"
                     class="quantity"

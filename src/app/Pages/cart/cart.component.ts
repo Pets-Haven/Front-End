@@ -30,9 +30,11 @@ export class CartComponent implements OnInit {
         });
       });
   }
-  /*changeHandle(product: any) {
-    if()
-  }*/
+  changeHandle(product: any) {
+    if(product.cartQuantity>product.productQuantity){
+      product.cartQuantity=product.productQuantity
+    }
+  }
   addbutton(product: any): void {
     if (product.cartQuantity < product.productQuantity) {
       product.cartQuantity = product.cartQuantity + 1;

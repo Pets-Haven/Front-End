@@ -6,13 +6,14 @@ import { WishlistPopUpComponent } from '../POPUPS/wishlist-pop-up/wishlist-pop-u
 import { CartPopUpComponent } from '../POPUPS/cart-pop-up/cart-pop-up.component';
 import { DetailsPopUpComponent } from '../POPUPS/details-pop-up/details-pop-up.component';
 import { CartService } from 'src/app/services/cart.service';
+import { WishlistService } from 'src/app/services/wishlist.service';
 @Component({
   selector: 'app-card-row',
   templateUrl: './card-row.component.html',
   styleUrls: ['./card-row.component.css'],
 })
 export class CardRowComponent {
-  constructor(private dialogRef: MatDialog,public cart:CartService) {}
+  constructor(private dialogRef: MatDialog,public cart:CartService,public wishlist:WishlistService) {}
   @Input() product: product = {
     id: 0,
     name: '',
@@ -25,10 +26,14 @@ export class CardRowComponent {
     image: '',
   };
   userId:string='caa92dc2-3254-4b01-8dc7-0a7d71678497';
-  addtowhishlist(): void {
+  addtowhishlist(product: any): void {
+    if(this.wishlist.addProductToWishlist(product))
     this.dialogRef.open(WishlistPopUpComponent, {
       data: this.product,
     });
+    else{
+      console.log("sobeh will handle this ");
+    }
   }
   details(): void {
     this.dialogRef.open(DetailsPopUpComponent, {
