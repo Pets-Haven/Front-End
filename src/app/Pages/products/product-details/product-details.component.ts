@@ -1,3 +1,4 @@
+import { UsersService } from 'src/app/services/users.service';
 import { product } from './../../../services/product';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -8,19 +9,20 @@ import { ProductsService } from 'src/app/services/products.service';
 import { CategoriesService } from 'src/app/services/categories.service';
 import { CartService } from 'src/app/services/cart.service';
 import { WishlistService } from 'src/app/services/wishlist.service';
+import { AlertPopUpComponent } from '../POPUPS/alert-pop-up/alert-pop-up.component';
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css'],
 })
 export class ProductDetailsComponent implements OnInit {
-  userId: string = 'bd3ae7bf-8aac-4894-a4e4-505e7e78b5e6';
   constructor(
     public activeroute: ActivatedRoute,
     public dialogRef: MatDialog,
     public productservice: ProductsService,
     public cart: CartService,
     public wishlist: WishlistService,
+    public UsersService: UsersService,
     public categoryService: CategoriesService
   ) {}
   productid: any;
@@ -29,6 +31,7 @@ export class ProductDetailsComponent implements OnInit {
   quantity: number = Number(this.quantityNumber);
   category: any;
   ngOnInit(): void {
+    this.UsersService.retreiveTokenData();
     this.activeroute.params.subscribe((params) => {
       this.productid = params['id'];
       this.productservice.getproductbyid(this.productid).subscribe((data) => {
@@ -60,22 +63,28 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
   addtocart() {
-    this.cart.isItemExist(this.userId, this.product.id).subscribe({
-      next: (data) => {
-        console.log('not found');
-      },
-      error: (err) => {
-        this.dialogRef.open(CartPopUpComponent, {
-          data: this.product,
-        });
-        let addedproduct = {
-          productId: this.product.id,
-          cartQuantity: this.quantity,
-        };
+    this.cart
+      .isItemExist(this.UsersService.loggedinUser.userID, this.product.id)
+      .subscribe({
+        next: (data) => {
+          this.dialogRef.open(AlertPopUpComponent, {
+            data: { ...this.product, alertType: 'Cart' },
+          });
+        },
+        error: (err) => {
+          this.dialogRef.open(CartPopUpComponent, {
+            data: this.product,
+          });
+          let addedproduct = {
+            productId: this.product.id,
+            cartQuantity: this.quantity,
+          };
 
-        this.cart.addToCart(this.userId, addedproduct).subscribe();
-      },
-    });
+          this.cart
+            .addToCart(this.UsersService.loggedinUser.userID, addedproduct)
+            .subscribe();
+        },
+      });
   }
   addtowhishlist(): void {
     if (this.wishlist.addProductToWishlist(this.product))
@@ -83,7 +92,9 @@ export class ProductDetailsComponent implements OnInit {
         data: this.product,
       });
     else {
-      console.log('sobeh will handle this ');
+      this.dialogRef.open(AlertPopUpComponent, {
+        data: { ...this.product, alertType: 'whislist' },
+      });
     }
   }
 }

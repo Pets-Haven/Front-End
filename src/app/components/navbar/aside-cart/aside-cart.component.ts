@@ -1,10 +1,33 @@
-import { Component } from '@angular/core';
+import { UsersService } from 'src/app/services/users.service';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-aside-cart',
   templateUrl: './aside-cart.component.html',
-  styleUrls: ['./aside-cart.component.css']
+  styleUrls: ['./aside-cart.component.css'],
 })
-export class AsideCartComponent {
+export class AsideCartComponent implements OnInit {
+  @Input() cartproducts: any;
+  products: any;
+  constructor(public cart: CartService, public UsersService: UsersService) {}
+  ngOnInit(): void {
+    this.UsersService.retreiveTokenData();
+    this.cart
+      .getCart(this.UsersService.loggedinUser.userID)
+      .subscribe((res) => {
+        this.products = res;
+      });
+  }
 
+  deleteButton(product: any) {
+    this.cart
+      .removeFromCart(this.UsersService.loggedinUser.userID, product.productId)
+      .subscribe(
+        (this.products = this.products.filter(
+          (x: any) => x.productId != product.productId
+        ))
+      );
+  }
 }

@@ -1,12 +1,12 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { product } from 'src/app/services/product';
+
 @Component({
-  selector: 'app-cart-pop-up',
-  templateUrl: './cart-pop-up.component.html',
-  styleUrls: ['./cart-pop-up.component.css'],
+  selector: 'app-alert-pop-up',
+  templateUrl: './alert-pop-up.component.html',
+  styleUrls: ['./alert-pop-up.component.css'],
 })
-export class CartPopUpComponent {
+export class AlertPopUpComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA)
     public data: {
@@ -19,6 +19,7 @@ export class CartPopUpComponent {
       animalType: '';
       type: '';
       image: '';
+      alertType: '';
     }
   ) {}
 }

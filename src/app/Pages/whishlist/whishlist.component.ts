@@ -1,3 +1,4 @@
+import { UsersService } from 'src/app/services/users.service';
 import { product } from './../../services/product';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -14,32 +15,39 @@ export class WhishlistComponent implements OnInit {
   constructor(
     public wishlist: WishlistService,
     public cart: CartService,
+    public UsersService: UsersService,
     public dialogRef: MatDialog
   ) {}
   products: any;
-  userId: string = 'bd3ae7bf-8aac-4894-a4e4-505e7e78b5e6';
   ngOnInit(): void {
     this.products = this.wishlist.getWishlist();
+    this.UsersService.retreiveTokenData();
   }
   deleteButton(id: number) {
     this.wishlist.removeFromWishlist(id);
     this.products = this.wishlist.getWishlist();
   }
   addtocart(product: any) {
-    this.cart.isItemExist(this.userId, product.id).subscribe({
-      next: (data) => {
-        console.log('not found');
-      },
-      error: (err) => {
-        this.wishlist.removeFromWishlist(product.id);
-        this.dialogRef.open(CartPopUpComponent, {
-          data: product,
-        });
-        let addedproduct = { productId: product.id, cartQuantity: 1 };
+    this.cart
+      .isItemExist(this.UsersService.loggedinUser.userID, product.id)
+      .subscribe({
+        next: (data) => {
+          this.dialogRef.open(CartPopUpComponent, {
+            data: { ...product, alertType: 'Cart' },
+          });
+        },
+        error: (err) => {
+          this.wishlist.removeFromWishlist(product.id);
+          this.dialogRef.open(CartPopUpComponent, {
+            data: product,
+          });
+          let addedproduct = { productId: product.id, cartQuantity: 1 };
 
-        this.cart.addToCart(this.userId, addedproduct).subscribe();
-        this.products = this.wishlist.getWishlist();
-      },
-    });
+          this.cart
+            .addToCart(this.UsersService.loggedinUser.userID, addedproduct)
+            .subscribe();
+          this.products = this.wishlist.getWishlist();
+        },
+      });
   }
 }

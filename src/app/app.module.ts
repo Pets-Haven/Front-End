@@ -40,7 +40,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CartComponent } from './Pages/cart/cart.component';
 import { CheckOutComponent } from './Pages/cart/check-out/check-out.component';
 import { WhishlistComponent } from './Pages/whishlist/whishlist.component';
-
+import { AlertPopUpComponent } from './Pages/products/POPUPS/alert-pop-up/alert-pop-up.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +76,7 @@ import { WhishlistComponent } from './Pages/whishlist/whishlist.component';
     CartComponent,
     CheckOutComponent,
     WhishlistComponent,
+    AlertPopUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -85,7 +86,7 @@ import { WhishlistComponent } from './Pages/whishlist/whishlist.component';
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

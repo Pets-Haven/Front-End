@@ -1,0 +1,36 @@
+<aside
+  class="product-action-modal modal fade"
+  id="action-CartAddModal"
+  tabindex="-1"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="product-action-view-content">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            [mat-dialog-close]
+          >
+            <i class="bi bi-x"></i>
+          </button>
+          <div class="modal-action-messages">
+            {{ data.name }} Already in
+            {{ data.alertType }}
+          </div>
+          <div class="modal-action-product">
+            <div class="thumb">
+              <img
+                src="../../../assets/Images/undraw_cat_epte.svg"
+                alt="Organic Food Juice"
+                style="height: 320px; width: 100%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>

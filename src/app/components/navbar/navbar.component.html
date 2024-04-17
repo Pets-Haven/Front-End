@@ -84,6 +84,7 @@
                 <button
                   class="shopping-cart-btn"
                   type="button"
+                  (click)="openCart()"
                   data-bs-toggle="offcanvas"
                   data-bs-target="#AsideOffcanvasCart"
                   aria-controls="AsideOffcanvasCart"
@@ -92,13 +93,7 @@
                   <sup class="shop-count">2</sup>
                 </button>
               </div>
-              <button
-                class="btn-menu"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#AsideOffcanvasMenu"
-                aria-controls="AsideOffcanvasMenu"
-              >
+              <button class="btn-menu" type="button" (click)="openCart()">
                 <i class="bi bi-list"></i>
               </button>
             </div>
