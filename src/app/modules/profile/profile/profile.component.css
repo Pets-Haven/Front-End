@@ -1,0 +1,150 @@
+/* My Account Area */
+.my-account-area {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.myaccount-page-wrapper {
+  margin-bottom: 30px;
+}
+
+.myaccount-tab-menu {
+  border-bottom: 1px solid #3e1901;
+  margin-bottom: 30px;
+}
+
+.myaccount-tab-menu .nav-link {
+  border: none;
+  border-radius: 0;
+  font-size: 16px;
+  color: #0c0c0c;
+  padding: 15px 20px;
+  margin-right: 10px;
+}
+
+.myaccount-tab-menu .nav-link.active {
+  background-color: #b12c87;
+  border-bottom: 2px solid #0b0b0b;
+}
+
+/* Feature Area */
+.feature-area {
+  background-color: #090909;
+  padding: 50px 0;
+}
+
+.feature-icon-box {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.icon-img {
+  margin-bottom: 20px;
+}
+
+.feature-icon-box .title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.feature-icon-box p {
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 0;
+}
+
+/* Button */
+.nav-link {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #100f0f;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link:hover {
+  color: #050505;
+}
+
+/* Account Details Form Styles */
+
+.myaccount-content {
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.myaccount-content h3 {
+  font-size: 24px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.account-details-form {
+  margin-bottom: 30px;
+}
+
+.account-details-form label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.single-input-item {
+  margin-bottom: 20px;
+}
+
+.single-input-item input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  color: #333333;
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 20px;
+}
+
+fieldset legend {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.col-lg-6 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.single-input-item button {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(159, 49, 134);
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.single-input-item button:hover {
+  background-color: #ad2e99;
+}

@@ -9,7 +9,7 @@ import { ContactUsComponent } from './Pages/contact-us/contact-us.component';
 import { NotFoundComponent } from './Pages/not-found/not-found.component';
 import { CartComponent } from './Pages/cart/cart.component';
 import { WhishlistComponent } from './Pages/whishlist/whishlist.component';
-import { ProfileComponent } from './modules/profile/profile/profile.component';
+import { ProfileComponent } from './modules/profile/profile/profile.component'; // Import the ProfileComponent
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'products/category/:categoryid', component: ProductsComponent },
   { path: 'products/search/:searchvalue', component: ProductsComponent },
   { path: 'Account', component: ProfileComponent },
+  { path: 'profile', component: ProfileComponent }, // Use the ProfileComponent in the routes
 
   {
     path: 'products/search',

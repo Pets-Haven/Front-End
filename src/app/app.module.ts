@@ -41,6 +41,7 @@ import { CartComponent } from './Pages/cart/cart.component';
 import { CheckOutComponent } from './Pages/cart/check-out/check-out.component';
 import { WhishlistComponent } from './Pages/whishlist/whishlist.component';
 import { AlertPopUpComponent } from './Pages/products/POPUPS/alert-pop-up/alert-pop-up.component';
+import { ProfileComponent } from './modules/profile/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -77,10 +78,7 @@ import { AlertPopUpComponent } from './Pages/products/POPUPS/alert-pop-up/alert-
     CheckOutComponent,
     WhishlistComponent,
     AlertPopUpComponent,
-  ],
-  exports: [
-    FeatureAreaComponent,
-    PageHeaderAreaComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

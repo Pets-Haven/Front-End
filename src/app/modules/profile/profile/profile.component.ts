@@ -6,15 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-
+  // component logic here
 }
-// import { AppHeaderAreaComponent } from '../app-header-area/app-header-area.component';
-
-// @NgModule({
-//   declarations: [
-//     ProfileComponent,
-//     AppHeaderAreaComponent
-//   ],
-//   // other module properties
-// })
-// export class ProfileModule { }
