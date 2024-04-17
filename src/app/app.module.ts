@@ -78,6 +78,10 @@ import { AlertPopUpComponent } from './Pages/products/POPUPS/alert-pop-up/alert-
     WhishlistComponent,
     AlertPopUpComponent,
   ],
+  exports: [
+    FeatureAreaComponent,
+    PageHeaderAreaComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
