@@ -77,6 +77,10 @@ import { WhishlistComponent } from './Pages/whishlist/whishlist.component';
     CheckOutComponent,
     WhishlistComponent,
   ],
+  exports: [
+    FeatureAreaComponent,
+    PageHeaderAreaComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
