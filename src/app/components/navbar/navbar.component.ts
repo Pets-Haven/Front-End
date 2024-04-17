@@ -33,6 +33,12 @@ export class NavbarComponent implements OnInit {
       .subscribe((data) => {
         this.products = data;
       });
-    this.MatDialog.open(AsideCartComponent);
+    this.MatDialog.open(AsideCartComponent, {
+      width: '400px',
+      data: { products: this.products },
+      exitAnimationDuration: 250,
+      enterAnimationDuration: 250,
+      position: { top: '0', left: '0' },
+    });
   }
 }

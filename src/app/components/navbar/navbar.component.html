@@ -57,25 +57,15 @@
                   <i class="bi bi-search"></i>
                 </button>
               </div>
-              <div class="shopping-account mt-3">
+              <div class="shopping-account ">
                 <a
                   class="shopping-account-btn"
-                  *ngIf="isLogin"
                   routerLink="/signin"
                 >
                   <i class="bi bi-people"></i>
                 </a>
               </div>
-              <div class="shopping-account mt-3">
-                <a
-                  class="shopping-account-btn"
-                  *ngIf="!isLogin"
-                  routerLink="/profile"
-                >
-                  <i class="bi bi-people"></i>
-                </a>
-              </div>
-              <div class="shopping-wishlist mt-3">
+              <div class="shopping-wishlist ">
                 <a class="shopping-wishlist-btn" routerLink="/whishlist">
                   <i class="bi bi-heart"></i>
                 </a>
@@ -85,15 +75,13 @@
                   class="shopping-cart-btn"
                   type="button"
                   (click)="openCart()"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#AsideOffcanvasCart"
-                  aria-controls="AsideOffcanvasCart"
-                >
+                  data-bs-toggle="modal"
+                  >
                   <i class="bi bi-bag-dash"></i>
                   <sup class="shop-count">2</sup>
                 </button>
               </div>
-              <button class="btn-menu" type="button" (click)="openCart()">
+              <button class="btn-menu" type="button" (click)="openCart()" data-bs-toggle="modal">
                 <i class="bi bi-list"></i>
               </button>
             </div>
@@ -106,4 +94,4 @@
 <!--== End Header Wrapper ==-->
 <app-aside-menu></app-aside-menu>
 <app-search-home-icon></app-search-home-icon>
-<app-aside-cart></app-aside-cart>
+<!-- <app-aside-cart></app-aside-cart> -->

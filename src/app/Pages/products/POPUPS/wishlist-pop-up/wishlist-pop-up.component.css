@@ -124,7 +124,7 @@
 }
 .modal {
   position: fixed;
-  display: block;
+  /* display: block;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -139,7 +139,7 @@
   pointer-events: none;
   opacity: 1;
   transition: opacity 250ms 700ms ease;
-  z-index: 100;
+  z-index: 100; */
 }
 
 .product-single-info {

@@ -1,18 +1,10 @@
-<aside
-  class="aside-cart-wrapper offcanvas offcanvas-end"
-  data-bs-scroll="true"
-  data-bs-backdrop="false"
-  tabindex="-1"
-  id="AsideOffcanvasCart"
-  aria-labelledby="offcanvasRightLabel"
->
+<!-- <aside class="aside-cart-wrapper offcanvas offcanvas-end d-block">
   <div class="offcanvas-header">
-    <h1 class="d-none" id="offcanvasRightLabel">Shopping Cart</h1>
+    <h1 id="offcanvasRightLabel">Shopping Cart</h1>
     <button
       class="btn-aside-cart-close"
       data-bs-dismiss="offcanvas"
       aria-label="Close"
-      [mat-dialog-close]
     >
       Shopping Cart <i class="fa fa-chevron-right"></i>
     </button>
@@ -42,4 +34,48 @@
     <a class="btn-total" routerLink="/cart">View cart</a>
     <a class="btn-total" href="shop-checkout.html">Checkout</a>
   </div>
+</aside> -->
+
+<aside class="aside-cart-wrapper offcanvas modal-fullscreen"
+data-bs-scroll="true"
+tabindex="-1"
+id="offcanvasWithBothOptions"
+aria-labelledby="offcanvasWithBothOptionsLabel"
+>
+<div class="offcanvas-header">
+  <h1 class="d-none" id="offcanvasRightLabel">Shopping Cart</h1>
+  <button
+    class="btn-aside-cart-close"
+    aria-label="Close"
+    mat-dialog-close="true"
+  >
+    Shopping Cart <i class="fa fa-chevron-right"></i>
+  </button>
+</div>
+<div class="offcanvas-body">
+  <ul class="aside-cart-product-list" *ngFor="let product of products">
+    <li class="aside-product-list-item">
+      <i (click)="deleteButton(product)" class="remove bi bi-x"></i>
+      <a href="single-product.html">
+        <img
+          src="{{ product.productImage }}"
+          width="90"
+          height="110"
+          alt="Image-HasTech"
+        />
+        <span class="product-title">{{ product.productName }}</span>
+      </a>
+      <span class="product-price"
+        >{{ product.cartQuantity }} × ${{ product.productPrice }}</span
+      >
+    </li>
+  </ul>
+
+  <p class="cart-total">
+    <span>Subtotal:</span><span class="amount">$89.99</span>
+  </p>
+  <a class="btn-total" routerLink="/cart">View cart</a>
+  <a class="btn-total" href="shop-checkout.html">Checkout</a>
+
+</div>
 </aside>
