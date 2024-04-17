@@ -1,19 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-Pages-contact-us',
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.css'],
 })
-export class ContactUsComponent {
+export class ContactUsComponent implements OnInit {
   public ContactForm!: FormGroup;
-  constructor(public FormBuilder: FormBuilder) {
+  constructor(public FormBuilder: FormBuilder,
+    private userServices: UsersService
+  ) {
     this.ContactForm = this.FormBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       message: ['', [Validators.required, Validators.minLength(3)]],
     });
+  }
+  ngOnInit(): void {
+    this.userServices.retreiveTokenData();
+    console.log(this.userServices.loggedinUser);
   }
   get getName() {
     return this.ContactForm.controls['name'];
