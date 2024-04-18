@@ -4,6 +4,7 @@ import { RegisterUser } from '../interfaces/registerUser';
 import { LoginUser } from '../interfaces/loginUser';
 import { userToken } from '../interfaces/userToken';
 import { jwtDecode } from 'jwt-decode';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -47,7 +48,6 @@ export class UsersService {
     return (this.loggedinUser.userID === '') ? false : true
   }
 
-
   logoutUser() {
     localStorage.removeItem('_petsToken');
     this.loggedinUser = {
@@ -58,4 +58,6 @@ export class UsersService {
       userName: ''
     }
   }
+
+
 }

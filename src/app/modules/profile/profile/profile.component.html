@@ -14,7 +14,7 @@
                 <div class="myaccount-tab-menu nav nav-tabs" id="nav-tab" role="tablist">
                   <button class="nav-link active" id="dashboad-tab" data-bs-toggle="tab" data-bs-target="#dashboad" type="button" role="tab" aria-controls="dashboad" aria-selected="true">Dashboard</button>
                   <button class="nav-link" id="orders-tab" data-bs-toggle="tab" data-bs-target="#orders" type="button" role="tab" aria-controls="orders" aria-selected="false"> Orders</button>
-                  <button class="nav-link" id="download-tab" data-bs-toggle="tab" data-bs-target="#download" type="button" role="tab" aria-controls="download" aria-selected="false">Download</button>
+                  <!-- <button class="nav-link" id="download-tab" data-bs-toggle="tab" data-bs-target="#download" type="button" role="tab" aria-controls="download" aria-selected="false">Download</button> -->
                   <button class="nav-link" id="payment-method-tab" data-bs-toggle="tab" data-bs-target="#payment-method" type="button" role="tab" aria-controls="payment-method" aria-selected="false">Payment Method</button>
                   <button class="nav-link" id="address-edit-tab" data-bs-toggle="tab" data-bs-target="#address-edit" type="button" role="tab" aria-controls="address-edit" aria-selected="false">address</button>
                   <button class="nav-link" id="account-info-tab" data-bs-toggle="tab" data-bs-target="#account-info" type="button" role="tab" aria-controls="account-info" aria-selected="false">Account Details</button>
@@ -28,7 +28,8 @@
                   <div class="myaccount-content">
                     <h3>Dashboard</h3>
                     <div class="welcome">
-                      <p>Hello, <strong>PetOwner</strong> (If Not <strong>Owner !</strong><a href="/signin" class="logout"> Logout</a>)</p>
+                          <p>Hello <strong>{{UserFirstName}}, </strong>
+                            <a href="/signin" class="logout" (click)="logout()"> Logout</a></p>
                     </div>
                     <p>From your Pet Heaven account dashboard, you can easily check & view your pet's health records, manage their dietary preferences, schedule grooming appointments, and shop for pet essentials.</p>
                   </div>
@@ -75,7 +76,7 @@
                   </div>
                 </div>
                 <div class="tab-pane fade" id="download" role="tabpanel" aria-labelledby="download-tab">
-                  <div class="myaccount-content">
+                  <!-- <div class="myaccount-content">
                     <h3>Downloads</h3>
                     <div class="myaccount-table table-responsive text-center">
                       <table class="table table-bordered">
@@ -103,7 +104,7 @@
                         </tbody>
                       </table>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="tab-pane fade" id="payment-method" role="tabpanel" aria-labelledby="payment-method-tab">
                   <div class="myaccount-content">
