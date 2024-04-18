@@ -10,6 +10,7 @@ export class SearchHomeIconComponent {
   searchValue: string = '';
   constructor(public route: Router) {}
   search() {
-    this.route.navigate(['products/search', this.searchValue]);
+  console.log(this.searchValue);
+    this.route.navigate(['products', 'search', this.searchValue]);
   }
 }

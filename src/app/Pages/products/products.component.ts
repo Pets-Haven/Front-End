@@ -19,12 +19,14 @@ export class ProductsComponent {
   constructor(public service: ProductsService, public route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    
     this.route.params.subscribe((params) => {
       let urlstring: any;
       if (params['searchvalue']) {
         urlstring = params['searchvalue'];
         this.service.SearchProducts(urlstring).subscribe((data: any) => {
           this.products = data;
+          this.currentPage=1;
         });
       } else if (params['categoryid']) {
         urlstring = params['categoryid'];
@@ -32,13 +34,17 @@ export class ProductsComponent {
           .filterProductsbycategory(urlstring)
           .subscribe((data: any) => {
             this.products = data;
+            this.currentPage=1;
+            
           });
       } else {
         this.service.getAllProducts().subscribe((data: any) => {
           this.products = data;
+          this.currentPage=1;
         });
       }
     });
+    
   }
 
   toggleCardType(flag: boolean) {
