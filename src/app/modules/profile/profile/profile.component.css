@@ -1,4 +1,8 @@
 /* My Account Area */
+.nav{
+  display: inline-grid;
+
+}
 .my-account-area {
   padding-top: 0;
   padding-bottom: 0;
@@ -14,12 +18,13 @@
 }
 
 .myaccount-tab-menu .nav-link {
+
   border: none;
   border-radius: 0;
   font-size: 16px;
   color: #0c0c0c;
   padding: 15px 20px;
-  margin-right: 10px;
+
 }
 
 .myaccount-tab-menu .nav-link.active {
