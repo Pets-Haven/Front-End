@@ -63,6 +63,7 @@ export class ProductDetailsComponent implements OnInit {
     }
   }
   addtocart() {
+    this.cart;
     this.cart
       .isItemExist(this.UsersService.loggedinUser.userID, this.product.id)
       .subscribe({
@@ -75,10 +76,8 @@ export class ProductDetailsComponent implements OnInit {
           this.dialogRef.open(CartPopUpComponent, {
             data: this.product,
           });
-          let addedproduct = {
-            productId: this.product.id,
-            cartQuantity: this.quantity,
-          };
+          this.wishlist.removeFromWishlist(this.product.id);
+          let addedproduct = { productId: this.product.id, cartQuantity: 1 };
 
           this.cart
             .addToCart(this.UsersService.loggedinUser.userID, addedproduct)
@@ -87,14 +86,25 @@ export class ProductDetailsComponent implements OnInit {
       });
   }
   addtowhishlist(): void {
-    if (this.wishlist.addProductToWishlist(this.product))
-      this.dialogRef.open(WishlistPopUpComponent, {
-        data: this.product,
+    this.cart
+      .isItemExist(this.UsersService.loggedinUser.userID, this.product.id)
+      .subscribe({
+        next: (data) => {
+          this.dialogRef.open(AlertPopUpComponent, {
+            data: { ...this.product, alertType: 'Cart' },
+          });
+        },
+        error: (err) => {
+          if (this.wishlist.addProductToWishlist(this.product.id))
+            this.dialogRef.open(WishlistPopUpComponent, {
+              data: this.product,
+            });
+          else {
+            this.dialogRef.open(AlertPopUpComponent, {
+              data: { ...this.product, alertType: 'Whishlist' },
+            });
+          }
+        },
       });
-    else {
-      this.dialogRef.open(AlertPopUpComponent, {
-        data: { ...this.product, alertType: 'whislist' },
-      });
-    }
   }
 }

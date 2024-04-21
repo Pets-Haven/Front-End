@@ -11,6 +11,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class AsideCartComponent implements OnInit {
   @Input() cartproducts: any;
   products: any;
+  totalprice: number = 0;
   constructor(public cart: CartService, public UsersService: UsersService) {}
   ngOnInit(): void {
     this.UsersService.retreiveTokenData();
@@ -18,16 +19,32 @@ export class AsideCartComponent implements OnInit {
       .getCart(this.UsersService.loggedinUser.userID)
       .subscribe((res) => {
         this.products = res;
+        this.totalprice = 0;
+        this.products.forEach((product: any) => {
+          this.totalprice =
+            Math.round(
+              (this.totalprice + product.productPrice * product.cartQuantity) *
+                100
+            ) / 100;
+        });
       });
   }
 
   deleteButton(product: any) {
     this.cart
       .removeFromCart(this.UsersService.loggedinUser.userID, product.productId)
-      .subscribe(
-        (this.products = this.products.filter(
+      .subscribe((res) => {
+        this.products = this.products.filter(
           (x: any) => x.productId != product.productId
-        ))
-      );
+        );
+        this.totalprice = 0;
+        this.products.forEach((product: any) => {
+          this.totalprice =
+            Math.round(
+              (this.totalprice + product.productPrice * product.cartQuantity) *
+                100
+            ) / 100;
+        });
+      });
   }
 }

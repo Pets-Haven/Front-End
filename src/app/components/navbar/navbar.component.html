@@ -57,15 +57,12 @@
                   <i class="bi bi-search"></i>
                 </button>
               </div>
-              <div class="shopping-account ">
-                <a
-                  class="shopping-account-btn"
-                  routerLink="/signin"
-                >
+              <div class="shopping-account">
+                <a class="shopping-account-btn" routerLink="/signin">
                   <i class="bi bi-people"></i>
                 </a>
               </div>
-              <div class="shopping-wishlist ">
+              <div class="shopping-wishlist">
                 <a class="shopping-wishlist-btn" routerLink="/whishlist">
                   <i class="bi bi-heart"></i>
                 </a>
@@ -76,12 +73,17 @@
                   type="button"
                   (click)="openCart()"
                   data-bs-toggle="modal"
-                  >
+                >
                   <i class="bi bi-bag-dash"></i>
-                  <sup class="shop-count">2</sup>
+                  <sup class="shop-count">{{ cartCount }}</sup>
                 </button>
               </div>
-              <button class="btn-menu" type="button" (click)="openCart()" data-bs-toggle="modal">
+              <button
+                class="btn-menu"
+                type="button"
+                (click)="openCart()"
+                data-bs-toggle="modal"
+              >
                 <i class="bi bi-list"></i>
               </button>
             </div>

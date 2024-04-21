@@ -36,15 +36,26 @@ export class CardRowComponent implements OnInit {
     image: '',
   };
   addtowhishlist(product: any): void {
-    if (this.wishlist.addProductToWishlist(product))
-      this.dialogRef.open(WishlistPopUpComponent, {
-        data: this.product,
+    this.cart
+      .isItemExist(this.UsersService.loggedinUser.userID, this.product.id)
+      .subscribe({
+        next: (data) => {
+          this.dialogRef.open(AlertPopUpComponent, {
+            data: { ...this.product, alertType: 'Cart' },
+          });
+        },
+        error: (err) => {
+          if (this.wishlist.addProductToWishlist(product))
+            this.dialogRef.open(WishlistPopUpComponent, {
+              data: this.product,
+            });
+          else {
+            this.dialogRef.open(AlertPopUpComponent, {
+              data: { ...this.product, alertType: 'Whishlist' },
+            });
+          }
+        },
       });
-    else {
-      this.dialogRef.open(AlertPopUpComponent, {
-        data: { ...this.product, alertType: 'whishlist' },
-      });
-    }
   }
   details(): void {
     this.dialogRef.open(DetailsPopUpComponent, {
@@ -64,6 +75,7 @@ export class CardRowComponent implements OnInit {
           this.dialogRef.open(CartPopUpComponent, {
             data: this.product,
           });
+          this.wishlist.removeFromWishlist(this.product.id);
           let addedproduct = { productId: this.product.id, cartQuantity: 1 };
 
           this.cart
