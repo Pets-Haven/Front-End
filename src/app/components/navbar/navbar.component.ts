@@ -12,7 +12,7 @@ import { AsideCartComponent } from './aside-cart/aside-cart.component';
 export class NavbarComponent implements OnInit {
   isLogin: boolean = true;
   products: any;
-  cartCount: number = 0;
+  cartCount: any;
   constructor(
     public cart: CartService,
     public UsersService: UsersService,
@@ -20,13 +20,24 @@ export class NavbarComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.UsersService.retreiveTokenData();
-    this.cart
-      .getCart(this.UsersService.loggedinUser.userID)
-      .subscribe((data) => {
-        this.products = data;
-        this.cartCount = this.products.length;
-      });
+    // this.cart
+    //   .getCart(this.UsersService.loggedinUser.userID)
+    //   .subscribe((data) => {
+    //     this.products = data;
+    //   });
+    
+      // this.cartCount = this.cart.getCartCount(this.UsersService.loggedinUser.userID);
+      this.cart.getCartCount(this.UsersService.loggedinUser.userID);
+      // console.log(this.cart.cartCount);
+      
+      
+      // console.log('nav',this.cartCount);
+      // console.log('cart',this.cart.cartCount);
+      
+      
+      
   }
+
   // isLogged() {
   //   if (localStorage.getItem('_petsToken')) {
   //     this.isLogin = true;

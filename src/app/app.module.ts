@@ -42,6 +42,8 @@ import { CheckOutComponent } from './Pages/cart/check-out/check-out.component';
 import { WhishlistComponent } from './Pages/whishlist/whishlist.component';
 import { AlertPopUpComponent } from './Pages/products/POPUPS/alert-pop-up/alert-pop-up.component';
 import { ProfileComponent } from './modules/profile/profile/profile.component';
+import { AdminModule } from './modules/admin/admin.module';
+import { AdminRoutingModule } from './modules/admin/admin-routing.module';
 
 @NgModule({
   declarations: [
@@ -89,6 +91,8 @@ import { ProfileComponent } from './modules/profile/profile/profile.component';
     BrowserAnimationsModule,
     MatDialogModule,
     MatSnackBarModule,
+    AdminModule,
+    AdminRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

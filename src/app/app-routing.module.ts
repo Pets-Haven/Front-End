@@ -10,6 +10,9 @@ import { NotFoundComponent } from './Pages/not-found/not-found.component';
 import { CartComponent } from './Pages/cart/cart.component';
 import { WhishlistComponent } from './Pages/whishlist/whishlist.component';
 import { ProfileComponent } from './modules/profile/profile/profile.component'; // Import the ProfileComponent
+import { AdminComponent } from './modules/admin/admin.component';
+import { DashboardComponent } from './modules/admin/dashboard/dashboard.component';
+import { ProductsManagmentComponent } from './modules/admin/products-managment/products-managment.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,7 +35,16 @@ const routes: Routes = [
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'cart', component: CartComponent },
   { path: 'whishlist', component: WhishlistComponent },
-  { path: '**', component: NotFoundComponent },
+  {
+    path: 'dashboard',
+    component: AdminComponent,
+    children: [
+      {
+        path: '',
+        component: ProductsManagmentComponent
+      }
+    ],    
+  },  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

@@ -40,10 +40,7 @@ export class SigninComponent {
           localStorage.setItem('_petsToken', response.token);
           const decodedToken: userToken = jwtDecode(response.token);
           this.userService.loggedinUser = decodedToken;
-          console.log(this.userService.isUserLoggedIn());
-          
-          
-          // this.router.navigate(['/home']);
+          this.router.navigate(['/home']);
         },
         error: (error) => {
           if (error.status === 401) {

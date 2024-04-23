@@ -1,5 +1,5 @@
 import { UsersService } from 'src/app/services/users.service';
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 

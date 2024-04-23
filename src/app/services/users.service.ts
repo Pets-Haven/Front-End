@@ -40,7 +40,6 @@ export class UsersService {
       this.loggedinUser.userFullName = userToken.userFullName;
       this.loggedinUser.userRole = userToken.userRole;
       this.loggedinUser.userName = userToken.userName;
-      
     }
   }
   
